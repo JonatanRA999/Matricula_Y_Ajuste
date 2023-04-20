@@ -4,7 +4,7 @@ import React from 'react'
 function MatriculaPage() 
 {
   return (
-    <div>
+    <div id="Page-matricula">
       <VerCursos/>
     </div>
   )

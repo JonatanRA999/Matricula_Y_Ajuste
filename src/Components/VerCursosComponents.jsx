@@ -8,17 +8,10 @@ export function VerCursos()
 
     const [listadoCursos, setListadoCursos] = useState([]);
 
-   
-    
-  
- 
-
-
-
 
     const cursosMatricula = async () => 
     {
-        const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/1006157087")
+        const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/001")
             .then((response) => response.json())
             .then((data) => data);
 
@@ -35,48 +28,65 @@ export function VerCursos()
         setMostrarContenido(true);
     }
 
+    
+
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
     useEffect(() => {
         // Si el contenido se está mostrando y el tiempo restante es mayor que cero,
         // establece un temporizador para actualizar el tiempo restante cada segundo
         if (mostrarContenido && tiempoRestante > 0) {
-          const temporizador = setTimeout(() => {
-            setTiempoRestante(tiempoRestante - 1);
-          }, 1000);
+            const temporizador = setTimeout(() => {
+                setTiempoRestante(tiempoRestante - 1);
+            }, 1000);
     
-          // Devuelve una función de limpieza para cancelar el temporizador si el componente se desmonta
-          return () => clearTimeout(temporizador);
+            // Devuelve una función de limpieza para cancelar el temporizador si el componente se desmonta
+            return () => clearTimeout(temporizador);
         }
-      }, [mostrarContenido, tiempoRestante]);
+    }, [mostrarContenido, tiempoRestante]);
     
-      useEffect(() => {
+    useEffect(() => {
         // Si el tiempo restante llega a cero, oculta el contenido
         if (tiempoRestante === 0) {
-          setMostrarContenido(false);
+            setMostrarContenido(false);
         }
-      }, [tiempoRestante]);
+    }, [tiempoRestante]);
 
     return (
-        <div className="App">
+        <div className="container">
           { mostrarBoton ? 
-            <button onClick={cursosMatricula}>Iniciar</button> : null 
+            <button onClick={cursosMatricula}>Iniciar Matricula</button> : null 
           }
           { mostrarContenido ?
             <div>
-              <p>Tiempo restante: {tiempoRestante}</p>
+              <p > <span id="tiempo">Tiempo restante: {formatTime(tiempoRestante)}</span></p>
               <table>
                 <thead>
                   <tr>
-                    <th></th>
+                    <th>Curso</th>
+                    <th>Créditos</th>
+                    <th>Codigo</th>
+                    <th>Elegir</th>
                   </tr>
                 </thead>
                 <tbody>
                   {listadoCursos.map((curso, index) => (
                     <tr key={index}>
-                      <td>{curso.Nombre}</td>
+                      <td className="center">{curso.Nombre}</td>
+                      <td className="center">{curso.Creditos}</td>
+                      <td className="center">{curso.Codigo}</td>
+                      <td className="center">
+                        <button onClick={() => seleccionarCurso(curso)}>Seleccionar</button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+
             </div> : null
           }
         </div>
