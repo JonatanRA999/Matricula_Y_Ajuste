@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { PopupButton } from "./VentanaComponent";
 
 export function VerCursos()
 {
@@ -11,7 +12,7 @@ export function VerCursos()
 
     const cursosMatricula = async () => 
     {
-        const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/001")
+        const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/1006157087")
             .then((response) => response.json())
             .then((data) => data);
 
@@ -80,7 +81,7 @@ export function VerCursos()
                       <td className="center">{curso.Creditos}</td>
                       <td className="center">{curso.Codigo}</td>
                       <td className="center">
-                        <button onClick={() => seleccionarCurso(curso)}>Seleccionar</button>
+                        <PopupButton/>
                       </td>
                     </tr>
                   ))}
