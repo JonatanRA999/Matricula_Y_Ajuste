@@ -59,7 +59,7 @@ export function VerCursos()
     return (
         <div className="container">
           { mostrarBoton ? 
-            <button onClick={cursosMatricula}>Iniciar Matricula</button> : null 
+            <button onClick={cursosMatricula} id="boton-matricula">Iniciar Matricula</button> : null 
           }
           { mostrarContenido ?
             <div>

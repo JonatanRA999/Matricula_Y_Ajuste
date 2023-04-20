@@ -100,7 +100,7 @@ table {
   box-shadow: 2px 2px 5px #222; /* Sombra */
   background-color:white; /* Color de fondo */
   padding: 10px; /* Espacio interno */
-  width: 800px; height: 600px;
+  width: 700px; height: 510px;
   color: #000000;
 }
 
@@ -126,6 +126,8 @@ table {
 }
 
 
-tr Modal{
-  width: 300px; height: 400px;
+#boton-matricula{
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
 }
