@@ -53,7 +53,7 @@ table {
 th, td {
   text-align: center;
   padding: 8px;
-  border: 1px solid #272323;
+  border: 1px solid rgb(240, 233, 233);
   color: rgb(254, 255, 254);
   
 }
@@ -123,4 +123,9 @@ table {
 #titulo-matricula{
   color: #000000;
   font-size: 35px;
+}
+
+
+tr Modal{
+  width: 300px; height: 400px;
 }

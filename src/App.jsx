@@ -13,8 +13,7 @@ function App()
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/about" element={<VerCursos />} />
+          <Route path="/" element={<VerCursos/>} />
         </Routes>
       </BrowserRouter>
     </div>
