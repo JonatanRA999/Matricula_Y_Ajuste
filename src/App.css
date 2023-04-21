@@ -130,3 +130,14 @@ table {
   background-color: #298340;
   color: white;
 }
+
+#mensaje-matricula{
+  
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
+}
+
+#centrar{
+  text-align: center;
+}

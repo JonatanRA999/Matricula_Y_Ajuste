@@ -6,12 +6,13 @@ export function VerCursos()
     const [mostrarBoton, setMostrarBoton] = useState(true);
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
-
+    const [mostrarMensaje, setMostrarMensaje] = useState("");
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
     const cursosMatricula = async () => 
     {
+      /** https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/001 [ALTERNATIVA]*/
         const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/1006157087")
             .then((response) => response.json())
             .then((data) => data);
@@ -23,7 +24,7 @@ export function VerCursos()
         setMostrarBoton(false);
 
         // Establece el tiempo restante en 5 segundos (5000 milisegundos)
-        setTiempoRestante(900);
+        setTiempoRestante(500);
 
         // Establece el estado "mostrarContenido" en verdadero para mostrar el contenido
         setMostrarContenido(true);
@@ -47,6 +48,8 @@ export function VerCursos()
     
             // Devuelve una función de limpieza para cancelar el temporizador si el componente se desmonta
             return () => clearTimeout(temporizador);
+
+            
         }
     }, [mostrarContenido, tiempoRestante]);
     
@@ -54,6 +57,11 @@ export function VerCursos()
         // Si el tiempo restante llega a cero, oculta el contenido
         if (tiempoRestante === 0) {
             setMostrarContenido(false);
+            setMostrarMensaje(true);
+        }
+
+        if (tiempoRestante === 0) {
+          setMostrarMensaje("El tiempo para matricularse ha terminado");
         }
     }, [tiempoRestante]);
 
@@ -68,18 +76,20 @@ export function VerCursos()
               <table>
                 <thead>
                   <tr>
-                    <th>Curso</th>
-                    <th>Créditos</th>
                     <th>Codigo</th>
-                    <th>Elegir</th>
+                    <th id="centrar">Nombre</th>
+                    <th>Créditos</th>
+                    <th>Correquisitos</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   {listadoCursos.map((curso, index) => (
                     <tr key={index}>
-                      <td className="center">{curso.Nombre}</td>
-                      <td className="center">{curso.Creditos}</td>
                       <td className="center">{curso.Codigo}</td>
+                      <td className="center">{curso.Nombre}</td>
+                      <td className="center">{curso.Créditos}</td>
+                      <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
                         <PopupButton/>
                       </td>
@@ -87,9 +97,16 @@ export function VerCursos()
                   ))}
                 </tbody>
               </table>
-
+              
             </div> : null
+            
           }
+          
+          {
+            (tiempoRestante === 0 && mostrarBoton==false) ? <button id="mensaje-matricula">{mostrarMensaje}</button> : null
+          }
+          
+         
         </div>
       );
 }
