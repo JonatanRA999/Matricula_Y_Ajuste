@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Enviar } from "./EnviarOption";
 
 
 export function PopupButton() {
@@ -39,6 +40,7 @@ export function PopupButton() {
     <div>
       <button onClick={openPopup}>Seleccionar</button>
       <div>Horario seleccionado: {selectedOption}</div>
+      <Enviar mensaje={selectedOption}></Enviar>
     </div>
   );
 
