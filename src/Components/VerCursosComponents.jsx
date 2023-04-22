@@ -73,7 +73,6 @@ export function VerCursos()
           }
           { mostrarContenido ?
             <div>
-              
               <p > <span id="tiempo">Tiempo restante: {formatTime(tiempoRestante)}</span></p>
               <table>
                 <thead>

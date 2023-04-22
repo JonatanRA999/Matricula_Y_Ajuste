@@ -6,7 +6,7 @@ export function PopupButton() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const openPopup = () => {
-    const width = 500;
+    const width = 700;
     const height = 300;
     const left = window.innerWidth / 2 - width / 2;
     const top = window.innerHeight / 2 - height / 2;
@@ -20,7 +20,7 @@ export function PopupButton() {
           const optionsList = document.createElement('ul');
           data.forEach(option => {
             const listItem = document.createElement('li');
-            listItem.textContent = `Grupo: ${option.Grupo}, Código: ${option.Codigo}, Horario: ${option.Horario}`;
+            listItem.textContent = `Grupo: ${option.Grupo}, Código: ${option.Codigo}, Horario: ${option.Horario}, Cupos disponibles: ${option.CuposDisponibles}`;
             listItem.addEventListener('click', () => {
               setSelectedOption(option.Horario);
               popup.close();
