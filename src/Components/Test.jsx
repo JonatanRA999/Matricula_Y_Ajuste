@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export function PopupButton() {
-  const name = "Jonatan";
   const [selectedOption, setSelectedOption] = useState(null);
 
   const openPopup = () => {
@@ -15,13 +14,8 @@ export function PopupButton() {
       fetch('https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/10009')
         .then(response => response.json())
         .then(data => {
-          const popup = window.open('', 'popup', `width=${width}, height=${height}, left=${left}, top=${top}, center=yes`);
-          const acceptButton = document.createElement('button');
-          acceptButton.textContent = 'Aceptar';
-          acceptButton.classList.add('accept-button');
           // Crear la lista de opciones
           const optionsList = document.createElement('select');
-          optionsList.classList.add('options-list');
           const defaultOption = document.createElement('option');
           defaultOption.textContent = 'Seleccionar';
           defaultOption.disabled = true;
@@ -30,20 +24,30 @@ export function PopupButton() {
           data.forEach(option => {
             const listItem = document.createElement('option');
             listItem.textContent = `Grupo: ${option.Grupo}, Código: ${option.Codigo}, Horario: ${option.Horario}, Cupos disponibles: ${option.CuposDisponibles}`;
-            acceptButton.addEventListener('click', () => {
+            listItem.addEventListener('click', () => {
               setSelectedOption(option.Horario);
-              popup.close();
+               
+              
             });
-            popup.document.body.appendChild(optionsList);
-            popup.document.body.appendChild(acceptButton);
-           popup.resizeTo(width, height);
             optionsList.appendChild(listItem);
           });
 
-          // Agregar la lista y el botón "Aceptar" al HTML de la ventana emergente
+          // Agregar el botón de aceptar
+          const popup = window.open('', 'popup', `width=${width}, height=${height}, left=${left}, top=${top}, center=yes`);
+
+          const acceptButton = popup.document.createElement('button');
+          acceptButton.textContent = 'Aceptar';
+          acceptButton.addEventListener('click', () => {
+            if (selectedOption !== null) {
+              popup.close();
+            }
+          });
+          popup.document.body.appendChild(acceptButton);
+
+          // Agregar la lista al HTML de la ventana emergente
           
-          
-          
+          popup.document.body.appendChild(optionsList);
+          popup.resizeTo(width, height);
         });
     }, 0);
   };
@@ -51,8 +55,7 @@ export function PopupButton() {
   return (
     <div>
       <button onClick={openPopup}>Seleccionar</button>
-      <div>Horario: {selectedOption}</div>
+      <div>Horario seleccionado: {selectedOption}</div>
     </div>
   );
 }
-

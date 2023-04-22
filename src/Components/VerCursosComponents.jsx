@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { PopupButton } from "./VentanaComponent";
-import { Enviar } from "./EnviarOption";  
+import { PopupButton } from "./VentanaComponent"; 
 
 export function VerCursos()
 {
@@ -81,7 +80,6 @@ export function VerCursos()
                     <th id="centrar">Nombre</th>
                     <th>Créditos</th>
                     <th>Correquisitos</th>
-                    <th>Horario</th>
                     <th></th>
 
                   </tr>
@@ -93,7 +91,6 @@ export function VerCursos()
                       <td className="center">{curso.Nombre}</td>
                       <td className="center">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
-                      <td> <Enviar > </Enviar> </td>
                       <td className="center">
                         <PopupButton/>
                       </td>
