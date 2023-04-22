@@ -1,42 +1,144 @@
+*{
+  background-color:white;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*----ESTILOS DE LA TABLA QUE MUESTRA LOS CURSOS */
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  
 }
 
-.card {
-  padding: 2em;
+th {
+  background-color: #298340;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.read-the-docs {
-  color: #888;
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
 }
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid rgb(240, 233, 233);
+  color: rgb(254, 255, 254);
+  
+}
+
+td{
+  color :black;
+}
+
+#tiempo{
+  background-color: #298340;
+  border-radius: 80px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+}
+
+td button{
+  background-color: yellow;
+  color:#000000;
+}
+/*-----------------------------FIN ESTILOS TABLA-------------------------------*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 300px; overflow: auto;
+
+  
+}
+
+table {
+  flex-grow: 1;
+  height: 100%;
+}
+
+
+/* Estilos de la caja contenedora */
+.container {
+  height: 300px; /* Altura de la caja */
+  border: 1px solid #444; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+  overflow: auto; /* Scrollbar sólo cuando sea necesario */
+  box-shadow: 2px 2px 5px #222; /* Sombra */
+  background-color:white; /* Color de fondo */
+  padding: 10px; /* Espacio interno */
+  width: 700px; height: 510px;
+  color: #000000;
+}
+
+/* Estilos de la scrollbar */
+.container::-webkit-scrollbar {
+  width: 8px; /* Ancho */
+  height: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #666; /* Color del thumb */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #333; /* Color del track */
+}
+
+
+#titulo-matricula{
+  color: #000000;
+  font-size: 35px;
+}
+
+#boton-matricula{
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
+}
+
+#mensaje-matricula{
+  
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
+}
+
+#centrar{
+  text-align: center;
+}
+
