@@ -72,7 +72,7 @@ export function VerCursos()
           }
           { mostrarContenido ?
             <div>
-              butu
+              
               <p > <span id="tiempo">Tiempo restante: {formatTime(tiempoRestante)}</span></p>
               <table>
                 <thead>

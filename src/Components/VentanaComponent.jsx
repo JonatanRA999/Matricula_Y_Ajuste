@@ -18,7 +18,12 @@ export function PopupButton()
               data.forEach(option => {
                 const listItem = document.createElement('li');
                 listItem.textContent = option;
-                optionsList.appendChild(listItem);
+                listItem.addEventListener('click', () => {
+                  // Cerrar la ventana emergente y devolver el valor seleccionado
+                  window.opener.postMessage(option, '*');
+                  window.close();
+                });
+                optionsList.appendChild(listIte);
               });
       
               // Agregar la lista al HTML de la ventana emergente
@@ -32,5 +37,6 @@ export function PopupButton()
       return (
         <button onClick={openPopup}>Seleccionar</button>
       );
+      
       
 }
