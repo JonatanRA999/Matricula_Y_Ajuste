@@ -10,24 +10,27 @@ export function VerCursos()
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
-    const cursosMatricula = async () => 
-    {
-      /** https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/001 [ALTERNATIVA]*/
-        const cursos = await fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/1006157087")
-            .then((response) => response.json())
-            .then((data) => data);
-
-        console.log(cursos);
-        setListadoCursos(cursos);
-
-            // Cambia el estado "mostrarBoton" a falso para ocultar el botón
-        setMostrarBoton(false);
-
-        // Establece el tiempo restante en 5 segundos (5000 milisegundos)
-        setTiempoRestante(500);
-
-        // Establece el estado "mostrarContenido" en verdadero para mostrar el contenido
-        setMostrarContenido(true);
+    const cursosMatricula = async () => {
+      // Llamar a la API para iniciar la matrícula
+      const idEstudiante = "1006157087"; // Cambia esto por el ID del estudiante
+      await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`);
+    
+      // Llamar a la API para obtener los cursos de la matrícula
+      const cursos = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`)
+        .then((response) => response.json())
+        .then((data) => data);
+    
+      console.log(cursos);
+      setListadoCursos(cursos);
+    
+      // Cambiar el estado "mostrarBoton" a falso para ocultar el botón
+      setMostrarBoton(false);
+    
+      // Establecer el tiempo restante en 5 segundos (5000 milisegundos)
+      setTiempoRestante(500);
+    
+      // Establecer el estado "mostrarContenido" en verdadero para mostrar el contenido
+      setMostrarContenido(true);
     }
 
     
