@@ -26,6 +26,23 @@ export function PopupButton() {
             const selectedValue = optionsList.value;
             setSelectedOption(selectedValue);
             popup.close();
+
+            fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
+              method: "POST",
+              body: JSON.stringify({
+                "codigoMatricula": "7411006157087",
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log("Curso registrado exitosamente:", data);
+              })
+              .catch((error) => {
+                console.error("Error al registrar curso:", error);
+              });
           });
 
           const optionsList = document.createElement("select");
@@ -57,3 +74,4 @@ export function PopupButton() {
     </div>
   );
 }
+
