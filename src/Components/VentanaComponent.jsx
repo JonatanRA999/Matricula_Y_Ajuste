@@ -31,7 +31,7 @@ export function PopupButton() {
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
               method: "POST",
               body: JSON.stringify({
-                "idEstudiante": "10194867873",
+                "idEstudiante": "10200550505",
                 //"codigoMatricula": "7411006157087",
                 "codigoHorario": selectedValue
               }),

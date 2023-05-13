@@ -11,7 +11,7 @@ export function VerCursos()
 
 
     const cursosMatricula = async () => {
-      const idEstudiante = "10194867873";
+      const idEstudiante = "10200550505";
       const response = await fetch(
         `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/iniciarMatricula/${idEstudiante}`,
         {
@@ -45,7 +45,7 @@ export function VerCursos()
     };
 
     const finalizarMatricula = async () => {
-      const idEstudiante = "10194867873";
+      const idEstudiante = "10200550505";
       const response = await fetch(
         `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/finalizarMatricula/${idEstudiante}`,
         {
@@ -53,8 +53,10 @@ export function VerCursos()
         }
       );
     
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (response.ok) {
+        setMostrarMensaje("La matricula ha sido exitosa");
+      }else{
+        setMostrarMensaje("Ha ocurrido un error al procesar la matricula");
       }
     
       const data = await response.json();
@@ -95,6 +97,13 @@ export function VerCursos()
         }
     }, [tiempoRestante]);
 
+    const enviarMatricula = () => {
+      setMostrarContenido(false);
+      setMostrarMensaje("La matrícula ha sido enviada con éxito");
+    };
+
+    
+
     return (
         <div className="container">
           { mostrarBoton ? 
@@ -128,7 +137,11 @@ export function VerCursos()
                   ))}
                 </tbody>
               </table>
-              <button onClick={finalizarMatricula} id="boton-Enviar-matricula">Enviar</button>
+              { mostrarBoton==false ? 
+            <button onClick={enviarMatricula} id="boton-Enviar-matricula">Enviar</button> : null
+          }
+              
+              
             </div> : null
             
           }
