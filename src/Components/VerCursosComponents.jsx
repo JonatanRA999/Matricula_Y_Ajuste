@@ -11,7 +11,7 @@ export function VerCursos()
 
 
     const cursosMatricula = async () => {
-      const idEstudiante = "1006157087";
+      const idEstudiante = "10194867873";
       const response = await fetch(
         `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/iniciarMatricula/${idEstudiante}`,
         {

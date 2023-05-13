@@ -30,9 +30,9 @@ export function PopupButton() {
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
               method: "POST",
               body: JSON.stringify({
-                "idEstudiante": "1006157087",
-                "codigoMatricula": "7411006157087",
-                "codigoHorario": "10002-01"
+                "idEstudiante": "10194867873",
+                //"codigoMatricula": "7411006157087",
+                "codigoHorario": selectedValue
               }),
               headers: {
                 "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export function PopupButton() {
           data.forEach((option) => {
             const listItem = document.createElement("option");
             listItem.textContent = `Grupo: ${option.Grupo}, Código: ${option.Codigo}, Horario: ${option.Horario}, Cupos disponibles: ${option.CuposDisponibles}`;
-            listItem.value = option.Horario;
+            listItem.value = option.Codigo;
             optionsList.appendChild(listItem);
           });
 
