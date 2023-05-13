@@ -24,7 +24,8 @@ export function PopupButton() {
           acceptButton.classList.add("accept-button");
           acceptButton.addEventListener("click", () => {
             const selectedValue = optionsList.value;
-            setSelectedOption(selectedValue);
+            const selectedHorario = data.find((option) => option.Codigo === selectedValue);
+            setSelectedOption(selectedHorario);
             popup.close();
 
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
@@ -57,7 +58,7 @@ export function PopupButton() {
 
           data.forEach((option) => {
             const listItem = document.createElement("option");
-            listItem.textContent = `Grupo: ${option.Grupo}, Código: ${option.Codigo}, Horario: ${option.Horario}, Cupos disponibles: ${option.CuposDisponibles}`;
+            listItem.textContent = `Código: ${option.Codigo}, Horario: ${option.Horario}, Cupos disponibles: ${option.CuposDisponibles}`;
             listItem.value = option.Codigo;
             optionsList.appendChild(listItem);
           });
@@ -72,7 +73,9 @@ export function PopupButton() {
   return (
     <div>
       <button onClick={openPopup}>Seleccionar</button>
-      <div>Horario: {selectedOption}</div>
+      {selectedOption && (
+        <div>Horario: {selectedOption.Horario}</div>
+      )}
     </div>
   );
 }
