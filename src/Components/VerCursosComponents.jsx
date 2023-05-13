@@ -44,6 +44,22 @@ export function VerCursos()
       setMostrarContenido(true);
     };
 
+    const finalizarMatricula = async () => {
+      const idEstudiante = "10194867873";
+      const response = await fetch(
+        `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/finalizarMatricula/${idEstudiante}`,
+        {
+          method: "POST",
+        }
+      );
+    
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    
+      const data = await response.json();
+      console.log(data); // Imprime la respuesta de la API en la consola
+    };
     
 
     const formatTime = (time) => {
@@ -112,7 +128,7 @@ export function VerCursos()
                   ))}
                 </tbody>
               </table>
-              <button  id="boton-Enviar-matricula">Enviar</button>
+              <button onClick={finalizarMatricula} id="boton-Enviar-matricula">Enviar</button>
             </div> : null
             
           }
