@@ -112,7 +112,7 @@ export function VerCursos()
                   ))}
                 </tbody>
               </table>
-              
+              <button  id="boton-Enviar-matricula">Enviar</button>
             </div> : null
             
           }
