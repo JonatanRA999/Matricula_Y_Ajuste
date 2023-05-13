@@ -11,27 +11,38 @@ export function VerCursos()
 
 
     const cursosMatricula = async () => {
-      // Llamar a la API para iniciar la matrícula
-      const idEstudiante = "1006157087"; // Cambia esto por el ID del estudiante
-      await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`);
+      const idEstudiante = "1006157087";
+      const response = await fetch(
+        `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/iniciarMatricula/${idEstudiante}`,
+        {
+          method: "POST",
+          /*headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ idEstudiante }),*/
+        }
+      );
     
-      // Llamar a la API para obtener los cursos de la matrícula
-      const cursos = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`)
-        .then((response) => response.json())
-        .then((data) => data);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    
+      const cursos = await fetch(
+        `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
+      ).then((response) => response.json());
     
       console.log(cursos);
       setListadoCursos(cursos);
     
-      // Cambiar el estado "mostrarBoton" a falso para ocultar el botón
+      // Cambia el estado "mostrarBoton" a falso para ocultar el botón
       setMostrarBoton(false);
     
-      // Establecer el tiempo restante en 5 segundos (5000 milisegundos)
+      // Establece el tiempo restante en 5 segundos (5000 milisegundos)
       setTiempoRestante(500);
     
-      // Establecer el estado "mostrarContenido" en verdadero para mostrar el contenido
+      // Establece el estado "mostrarContenido" en verdadero para mostrar el contenido
       setMostrarContenido(true);
-    }
+    };
 
     
 
