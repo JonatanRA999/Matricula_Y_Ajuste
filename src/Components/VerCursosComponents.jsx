@@ -7,6 +7,8 @@ export function VerCursos()
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
     const [mostrarMensaje, setMostrarMensaje] = useState("");
+    const [mostrarMensajeFinal, setMostrarMensajeFinal] = useState("");
+    const [mostrarMensajeFinalizado, setMostrarMensajeFinalizado] = useState(false);
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
@@ -54,11 +56,15 @@ export function VerCursos()
       );
     
       if (response.ok) {
-        setMostrarMensaje("La matricula ha sido exitosa");
+        setMostrarMensajeFinal("La matricula ha sido exitosa");
+        setMostrarMensajeFinalizado(true);
       }else{
-        setMostrarMensaje("Ha ocurrido un error al procesar la matricula");
+        setMostrarMensajeFinal("Ha ocurrido un error al procesar la matricula");
       }
     
+      setMostrarContenido(false);
+      setMostrarBoton(false);
+
       const data = await response.json();
       console.log(data); // Imprime la respuesta de la API en la consola
     };
@@ -97,10 +103,7 @@ export function VerCursos()
         }
     }, [tiempoRestante]);
 
-    const enviarMatricula = () => {
-      setMostrarContenido(false);
-      setMostrarMensaje("La matrícula ha sido enviada con éxito");
-    };
+    
 
     
 
@@ -138,13 +141,16 @@ export function VerCursos()
                 </tbody>
               </table>
               { mostrarBoton==false ? 
-            <button onClick={enviarMatricula} id="boton-Enviar-matricula">Enviar</button> : null
+            <button onClick={finalizarMatricula} id="boton-Enviar-matricula">Enviar</button>  : null
           }
-              
               
             </div> : null
             
           }
+
+          {mostrarMensajeFinalizado ? (
+                <button id="mensaje-final">{mostrarMensajeFinal}</button>
+              ) : null}
           
           {
             (tiempoRestante === 0 && mostrarBoton==false) ? <button id="mensaje-matricula">{mostrarMensaje}</button> : null

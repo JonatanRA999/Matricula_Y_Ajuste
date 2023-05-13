@@ -148,3 +148,16 @@ table {
   margin-top: 7px;
   margin-bottom: 7px;
 }
+
+#mensaje-final{
+
+  background-color: #298340;
+  color: white;
+  font-size: 18px;
+  max-width: 500px;
+  width: 50%;
+  margin: 0 auto; /* centrar horizontalmente */
+  border: none;
+  cursor: default;
+
+}
