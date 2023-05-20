@@ -68,8 +68,10 @@ body{
     top: -16px;
 }
 
-.btn{
-    display: block;
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 100px;
     margin: 40px auto;
@@ -81,6 +83,7 @@ body{
     cursor: pointer;
     transition: .3s linear;
 }
+
 
 .btn:hover{
     opacity: .85;
