@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: center;
     border-radius: 35px;
-    
 }
 
 
@@ -23,7 +22,7 @@
     max-width: 500px;
     padding: 50px 40px;
     border-radius: 10px;
-    background-image: linear-gradient(rgba(236, 238, 236, 0.7), rgba(7, 136, 61, 0.7));
+    background: linear-gradient(45deg,#4CAF50 , rgb(226, 246, 221));
 }
 
 
@@ -79,7 +78,7 @@
     width: 100px;
     height: 100px;
     margin: 40px auto;
-    background-color: rgb(20, 132, 20);
+    background-color: green;
     color: #fff;
     font-size: 40px;
     border: none;
