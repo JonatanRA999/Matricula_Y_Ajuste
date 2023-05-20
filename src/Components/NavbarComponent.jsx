@@ -11,9 +11,7 @@ export function Navbar() {
 
   return (
     <div>
-      <Nav defaultActiveKey="/home" className="flex-column">
-        <span id="titulo-matricula">Proceso de matricula</span>
-      </Nav>
+  
     </div>
   );
 }

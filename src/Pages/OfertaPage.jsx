@@ -1,7 +1,7 @@
 export function Oferta(){
     return(
         <div>
-            Oferta academica
+            <h1>Oferta academica</h1>
         </div>
     );
 }

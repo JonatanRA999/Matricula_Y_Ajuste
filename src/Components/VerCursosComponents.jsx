@@ -13,7 +13,7 @@ export function VerCursos()
 
 
     const cursosMatricula = async () => {
-      const idEstudiante = "10200550505";
+      const idEstudiante = "10231663981";
       const response = await fetch(
         `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/iniciarMatricula/${idEstudiante}`,
         {
@@ -47,7 +47,7 @@ export function VerCursos()
     };
 
     const finalizarMatricula = async () => {
-      const idEstudiante = "10200550505";
+      const idEstudiante = "10231663981";
       const response = await fetch(
         `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/finalizarMatricula/${idEstudiante}`,
         {

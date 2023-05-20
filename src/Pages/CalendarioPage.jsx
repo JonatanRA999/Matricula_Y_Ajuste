@@ -1,7 +1,8 @@
-export function Calendario(){
+export function Calendario()
+{
     return(
         <div>
-            Calendario academico
+            <h1>Calendario</h1>
         </div>
     );
 }
