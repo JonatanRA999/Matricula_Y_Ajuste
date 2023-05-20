@@ -1,3 +1,5 @@
+import './Styles/StylesLayouts.css';
+
 export function PrivadoLayout()
 {
     return(

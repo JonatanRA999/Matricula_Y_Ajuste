@@ -13,6 +13,7 @@ function Login() {
   };
 
   return (
+    <div className='bodyb'>
       <form className="login-form">
       <h1 id="usuario-id">ID de usuario</h1>
       <div className="textb">
@@ -21,6 +22,8 @@ function Login() {
       </div>
       <button className="btn fas fa-arrow-right" disabled={isButtonDisabled}></button>
     </form>
+    </div>
+     
   );
 }
 

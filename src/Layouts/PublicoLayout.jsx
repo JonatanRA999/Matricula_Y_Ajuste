@@ -1,9 +1,11 @@
+import './Styles/StylesLayouts.css';
+
 export function PublicoLayout({children})
 {
     return (
-        <div >
+        <div className="contenedor-publico">
             <span>Creamos un componente Navbar</span>
-            <main >                
+            <main className="cuerpo-publico">                
                 {children}
             </main>
             <footer>Creamos un Componente Footer</footer>

@@ -17,30 +17,33 @@ function App()
     <div >
      <Router>
         <Switch>
-          <Route paht={['/ingresar']}>
-            <PublicoLayout>
-              <Switch>
-                <Route paht='/ingresar'> <Ingresar/> </Route>
-              </Switch>
-              
-            </PublicoLayout>
-          </Route>
-          <Route paht={['/calendario','/oferta','/matricula']}>
+          
+          <Route path={['/calendario','/oferta','/matricula']}>
             <PrivadoLayout>
               <Switch>
-                <Route paht='/calendario'> <Calendario/> </Route>
-                <Route paht='/oferta'> <Oferta/> </Route>
-                <Route paht='/matricula'> <Matricula/> </Route>
+                <Route path='/calendario'> <Calendario/> </Route>
+                <Route path='/oferta'> <Oferta/> </Route>
+                <Route path='/matricula'> <Matricula/> </Route>
               </Switch>
             </PrivadoLayout>
           </Route>
-          <Route paht={['/']}>
+
+          <Route path={['/ingresar']}>
+            <PublicoLayout>
+              <Switch>
+                <Route path='/ingresar'> <Ingresar/> </Route>
+              </Switch>
+            </PublicoLayout>
+          </Route>
+          
+          <Route path={['/']}>
             <LoginLayout>
               <Switch>
-                <Route paht='/'> <Inicio/> </Route>
+                <Route path='/'> <Inicio/> </Route>
               </Switch>
             </LoginLayout>
           </Route>
+
         </Switch>
       </Router>
     </div>

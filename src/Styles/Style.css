@@ -5,13 +5,15 @@
     font-family: "Ubuntu",sans-serif;
 }
 
-body{
-    background: url(../Images/UdeA.jpg) no-repeat center;
+.bodyb{
+    
     background-size: cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 35px;
+    
 }
 
 
@@ -77,7 +79,7 @@ body{
     width: 100px;
     height: 100px;
     margin: 40px auto;
-    background-color: green;
+    background-color: rgb(20, 132, 20);
     color: #fff;
     font-size: 40px;
     border: none;

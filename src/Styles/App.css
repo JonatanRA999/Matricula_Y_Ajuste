@@ -7,6 +7,10 @@
 
 }
 
+body {
+  background: linear-gradient(135deg, #b5c2b9be, #6ea978);
+}
+
 /*----ESTILOS DE LA TABLA QUE MUESTRA LOS CURSOS */
 .table-container {
   width: 90%;
