@@ -13,7 +13,7 @@ function Login() {
   };
 
   return (
-    <form className="login-form">
+      <form className="login-form">
       <h1 id="usuario-id">ID de usuario</h1>
       <div className="textb">
         <input type="text" value={userId} onChange={handleInputChange} pattern="\d*" maxLength="10" required />

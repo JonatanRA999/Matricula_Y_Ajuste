@@ -1,4 +1,4 @@
-export function PrivateLayout()
+export function PrivadoLayout()
 {
     return(
         <div>

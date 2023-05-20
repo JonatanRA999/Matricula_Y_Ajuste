@@ -1,0 +1,12 @@
+.contenedor-publico{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  
+  .cuerpo-publico{
+    height: 100%; 
+    overflow-y: scroll;
+  }
+  
