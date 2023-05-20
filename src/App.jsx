@@ -27,21 +27,21 @@ function App()
               </Switch>
             </PrivadoLayout>
           </Route>
-
-          <Route path={['/ingresar']}>
-            <PublicoLayout>
-              <Switch>
-                <Route path='/ingresar'> <Ingresar/> </Route>
-              </Switch>
-            </PublicoLayout>
-          </Route>
           
-          <Route path={['/']}>
+          <Route path={['/ingresar']}>
             <LoginLayout>
+              <Switch>
+                <Route path='/'> <Ingresar/> </Route>
+              </Switch>
+            </LoginLayout>
+          </Route>
+
+          <Route path={['/']}>
+            <PublicoLayout>
               <Switch>
                 <Route path='/'> <Inicio/> </Route>
               </Switch>
-            </LoginLayout>
+            </PublicoLayout>
           </Route>
 
         </Switch>

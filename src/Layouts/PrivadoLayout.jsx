@@ -1,10 +1,13 @@
 import './Styles/StylesLayouts.css';
 
-export function PrivadoLayout()
+export function PrivadoLayout({children})
 {
     return(
-        <div>
+        <div className='contenedor-publico'>
             <span>Pagina privada</span>
+            <main className='cuerpo-publico'>
+                {children}
+            </main>
         </div>
     )
 }

@@ -8,7 +8,6 @@ export function PublicoLayout({children})
             <main className="cuerpo-publico">                
                 {children}
             </main>
-            <footer>Creamos un Componente Footer</footer>
         </div>
     );
 }
