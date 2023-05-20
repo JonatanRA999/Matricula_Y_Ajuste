@@ -1,4 +1,5 @@
-import './App.css'
+import './App.css';
+import './Style.css';
 import { VerCursos } from './Components/VerCursosComponents';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import { Navbar } from './Components/NavbarComponent';

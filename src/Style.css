@@ -6,7 +6,7 @@
 }
 
 body{
-    background: url(UdeA.jpg) no-repeat center;
+    background: url(../src/Images/UdeA.jpg) no-repeat center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -30,7 +30,7 @@ body{
     font-size: 36px;
 }
 
-.textb{
+.textb {
     margin-bottom: 12px;
     position: relative;
 }
