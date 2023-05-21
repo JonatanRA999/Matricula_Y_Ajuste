@@ -9,7 +9,8 @@
 
 body {
   background: linear-gradient(45deg,#dee8de ,  #c7ebba);
-  
+  margin: 0;
+  padding: 0;
 }
 
 /*----ESTILOS DE LA TABLA QUE MUESTRA LOS CURSOS */
@@ -163,3 +164,4 @@ table {
   cursor: default;
 
 }
+

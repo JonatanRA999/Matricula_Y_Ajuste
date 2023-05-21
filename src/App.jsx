@@ -14,18 +14,21 @@ import {LoginLayout} from './Layouts/LoginLayout';
 function App() 
 {
   return (
-    <div >
+    <div className='app'>
      <Router>
         <Switch>
           
           <Route path={['/calendario','/oferta','/matricula']}>
-            <PrivadoLayout>
-              <Switch>
-                <Route path='/calendario'> <Calendario/> </Route>
-                <Route path='/oferta'> <Oferta/> </Route>
-                <Route path='/matricula'> <Matricula/> </Route>
-              </Switch>
-            </PrivadoLayout>
+            <PublicoLayout>
+              <PrivadoLayout>
+                <Switch>
+                  <Route path='/calendario'> <Calendario/> </Route>
+                  <Route path='/oferta'> <Oferta/> </Route>
+                  <Route path='/matricula'> <Matricula/> </Route>
+                </Switch>
+              </PrivadoLayout>
+            </PublicoLayout>
+            
           </Route>
           
           <Route path={['/ingresar']}>
