@@ -27,7 +27,6 @@ function Login() {
         <h1 id="usuario-id">ID de usuario</h1>
         <div className="textb">
           <input type="text" value={userId} onChange={handleInputChange} pattern="\d*" maxLength="10" required />
-          <div className="placeholder">ID usuario</div>
         </div>
         <button className="btn fas fa-arrow-right" disabled={isButtonDisabled} onClick={handleFormSubmit}></button>
       </form>
