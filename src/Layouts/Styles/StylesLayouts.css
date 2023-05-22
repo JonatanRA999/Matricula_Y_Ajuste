@@ -1,0 +1,61 @@
+.contenedorLayoutHorizontal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    height: 600px;
+  }
+  .contenedorLayoutVertical{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    height: 600px;
+    display: flex;
+  flex-direction: row;
+  }
+  
+  .cuerpo{
+    height: 100%; 
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .cuerpo1{
+    width: 100%; 
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  
+  #titulo-login {
+    color: black;
+    font-size: 48px;
+    position: relative;
+    perspective: 1000px;
+    text-transform:none;
+  }
+  
+  #titulo-login:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    background-color: rgba(124, 247, 99, 0.2);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 60px;
+  }
+
+  .custom-nav {
+    border: 1px solid black; /* Agrega un borde sólido de color negro */
+    padding: 10px; /* Añade un relleno para resaltar el componente */
+    /* Otros estilos personalizados que desees agregar */
+  }
+  
