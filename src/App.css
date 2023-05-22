@@ -8,6 +8,7 @@
   padding: 2rem;
   text-align: center;
 
+
 }
 
 /*----ESTILOS DE LA TABLA QUE MUESTRA LOS CURSOS */
@@ -69,6 +70,7 @@ td{
   padding-right: 5px;
   color: white;
 }
+
 
 td button{
   background-color: yellow;
@@ -142,6 +144,7 @@ table {
   text-align: center;
 }
 
+
 #boton-Enviar-matricula{
   background-color: #298340;
   color: white;
@@ -161,3 +164,4 @@ table {
   cursor: default;
 
 }
+

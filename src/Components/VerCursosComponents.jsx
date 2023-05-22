@@ -7,6 +7,7 @@ export function VerCursos()
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
     const [mostrarMensaje, setMostrarMensaje] = useState("");
+
     const [mostrarMensajeFinal, setMostrarMensajeFinal] = useState("");
     const [mostrarMensajeFinalizado, setMostrarMensajeFinalizado] = useState(false);
     const [listadoCursos, setListadoCursos] = useState([]);
@@ -68,6 +69,7 @@ export function VerCursos()
       const data = await response.json();
       console.log(data); // Imprime la respuesta de la API en la consola
     };
+
     
 
     const formatTime = (time) => {
@@ -103,9 +105,11 @@ export function VerCursos()
         }
     }, [tiempoRestante]);
 
+
     
 
     
+
 
     return (
         <div className="container">
@@ -140,17 +144,21 @@ export function VerCursos()
                   ))}
                 </tbody>
               </table>
+
               { mostrarBoton==false ? 
             <button onClick={finalizarMatricula} id="boton-Enviar-matricula">Enviar</button>  : null
           }
+
               
             </div> : null
             
           }
 
+
           {mostrarMensajeFinalizado ? (
                 <button id="mensaje-final">{mostrarMensajeFinal}</button>
               ) : null}
+
           
           {
             (tiempoRestante === 0 && mostrarBoton==false) ? <button id="mensaje-matricula">{mostrarMensaje}</button> : null

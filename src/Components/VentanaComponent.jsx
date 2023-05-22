@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export function PopupButton() {
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   const openPopup = () => {
@@ -66,6 +67,7 @@ export function PopupButton() {
           popup.document.body.appendChild(optionsList);
           popup.document.body.appendChild(acceptButton);
           popup.resizeTo(width, height);
+
         });
     }, 0);
   };
@@ -73,9 +75,12 @@ export function PopupButton() {
   return (
     <div>
       <button onClick={openPopup}>Seleccionar</button>
+
       {selectedOption && (
         <div>Horario: {selectedOption.Horario}</div>
       )}
+
+
     </div>
   );
 }
