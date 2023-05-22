@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 function Login() {
+  const history = useHistory([]);
   const [userId, setUserId] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -12,18 +15,23 @@ function Login() {
     setIsButtonDisabled(truncatedInput.length === 0);
   };
 
+  const handleFormSubmit = () => {
+    
+    // Redireccionar a la página específica
+    history.push('/inicio');
+  };
+
   return (
     <div className='bodyb'>
-      <form className="login-form">
-      <h1 id="usuario-id">ID de usuario</h1>
-      <div className="textb">
-        <input type="text" value={userId} onChange={handleInputChange} pattern="\d*" maxLength="10" required />
-        <div className="placeholder">ID usuario</div>
-      </div>
-      <button className="btn fas fa-arrow-right" disabled={isButtonDisabled}></button>
-    </form>
+      <form className="login-form" onSubmit={handleFormSubmit}>
+        <h1 id="usuario-id">ID de usuario</h1>
+        <div className="textb">
+          <input type="text" value={userId} onChange={handleInputChange} pattern="\d*" maxLength="10" required />
+          <div className="placeholder">ID usuario</div>
+        </div>
+        <button className="btn fas fa-arrow-right" disabled={isButtonDisabled} onClick={handleFormSubmit}></button>
+      </form>
     </div>
-     
   );
 }
 

@@ -65,6 +65,7 @@
     color: #9d9d9d;
     user-select: none;
     pointer-events: none;
+    background-color: rgba(223, 216, 216, 0.739);
 }
 
 .textb input:focus ~ .placeholder,
