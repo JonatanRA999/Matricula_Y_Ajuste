@@ -1,5 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 import './Styles/StylesComponents.css';
+import {Link} from 'react-router-dom';
 
 function Sidebar() {
   return (
@@ -10,7 +11,8 @@ function Sidebar() {
       <Nav.Link eventKey="disabled" className='titulos' disabled>
         Constancia
       </Nav.Link>
-      <h1 className="additional-text">UdeA</h1>
+      <Nav.Link href="/" className="additional-text" ><h1 >UdeA</h1></Nav.Link>
+      
     </Nav>
   );
 }

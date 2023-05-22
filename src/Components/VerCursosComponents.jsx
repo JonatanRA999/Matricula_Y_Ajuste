@@ -13,7 +13,7 @@ export function VerCursos()
 
 
     const cursosMatricula = async () => {
-      const idEstudiante = "10231663981";
+      const idEstudiante = "1006157087";
       const response = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`,
         {
@@ -40,14 +40,14 @@ export function VerCursos()
       setMostrarBoton(false);
     
       // Establece el tiempo restante en 5 segundos (5000 milisegundos)
-      setTiempoRestante(500);
+      setTiempoRestante(900);
     
       // Establece el estado "mostrarContenido" en verdadero para mostrar el contenido
       setMostrarContenido(true);
     };
 
     const finalizarMatricula = async () => {
-      const idEstudiante = "10231663981";
+      const idEstudiante = "1006157087";
       const response = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`,
         {
@@ -131,7 +131,7 @@ export function VerCursos()
                     <tr key={index}>
                       <td className="center">{curso.Codigo}</td>
                       <td className="center">{curso.Nombre}</td>
-                      <td className="center">{curso.Creditos}</td>
+                      <td className="center centrar-en-tabla">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
                         <PopupButton/>

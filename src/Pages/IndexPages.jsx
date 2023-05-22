@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Styles/StylesPages.css';
 export default function Index() {
   return (

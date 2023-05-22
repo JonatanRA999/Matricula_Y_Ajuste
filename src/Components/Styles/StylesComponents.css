@@ -14,7 +14,7 @@
     padding: 10px; /* Añade un relleno para resaltar el componente */
     /* Otros estilos personalizados que desees agregar */
     margin-top: 5px;
-    background: linear-gradient(45deg, #e9ecec, #055243d4);
+    background: linear-gradient(45deg, #bed9d9, #159078d4);
     border: none;
     border-radius: 5px;
     padding-left: 50px;
@@ -57,5 +57,47 @@
   }
 
   .titulos:hover{
-    color:rgb(105, 243, 243);
+    color:rgb(191, 249, 249);
   }
+
+  #tabla-calendario {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    
+  }
+  
+  #tabla-calendario td, #tabla-calendario th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #tabla-calendario th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #tabla-calendario caption {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para las filas alternas */
+  #tabla-calendario tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para el primer elemento de la columna */
+  #tabla-calendario td:first-child, #tabla-calendario th:first-child {
+    text-align: left;
+  }
+.centrar-en-tabla{
+  text-align: center;
+}
+
+#tabla-calendario{
+  height: 350px;
+  
+}

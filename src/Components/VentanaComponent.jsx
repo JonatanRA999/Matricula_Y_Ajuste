@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+/***API PARA ESTUDIANTES https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes */
 export function PopupButton() {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -31,7 +31,7 @@ export function PopupButton() {
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
               method: "POST",
               body: JSON.stringify({
-                "idEstudiante": "10231663981",
+                "idEstudiante": "1006157087",
                 //"codigoMatricula": "7411006157087",
                 "codigoHorario": selectedValue
               }),

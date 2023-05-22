@@ -20,7 +20,7 @@ export function Navba() {
           />
         </Navbar.Brand>
         <Nav className="ml-auto">
-        <Nav.Link href="/ingresar" className="custom-button">Ingresar</Nav.Link>
+        <Nav.Link href="/inicio" className="custom-button">Ingresar</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
