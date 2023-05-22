@@ -1,0 +1,28 @@
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import LogoImage from './images/Logosímbolo+Universidad+de+Antioquia+horizontal+®-01.png';
+import './Styles/StylesComponents.css'
+
+export function Navba() {
+  return (
+    <Navbar className="custom-navbar">
+      <Container>
+        <Navbar.Brand>
+          <img
+            src={LogoImage}
+            width="250"
+            height="180"
+            className="d-inline-block align-top"
+            alt="Logo"
+          />
+        </Navbar.Brand>
+        <Nav className="ml-auto">
+          <Nav.Link href="#button" className="custom-button">Ingresar</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
+  );
+}
+

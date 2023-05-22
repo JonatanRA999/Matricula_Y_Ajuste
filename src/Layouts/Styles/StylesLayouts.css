@@ -1,13 +1,27 @@
-.contenedor-publico{
+.contenedorLayoutHorizontal{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    
+    width: 100%;
+    height: 600px;
+  }
+  .contenedorLayoutVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    height: 600px;
+    display: flex;
+  flex-direction: row;
   }
   
-  .cuerpo-publico{
+  .cuerpo{
     height: 100%; 
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   #titulo-login {
@@ -32,3 +46,9 @@
     font-size: 60px;
   }
 
+  .custom-nav {
+    border: 1px solid black; /* Agrega un borde sólido de color negro */
+    padding: 10px; /* Añade un relleno para resaltar el componente */
+    /* Otros estilos personalizados que desees agregar */
+  }
+  

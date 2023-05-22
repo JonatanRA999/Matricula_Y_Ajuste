@@ -15,7 +15,7 @@ export function VerCursos()
     const cursosMatricula = async () => {
       const idEstudiante = "10231663981";
       const response = await fetch(
-        `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/iniciarMatricula/${idEstudiante}`,
+        `https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`,
         {
           method: "POST",
           /*headers: {
@@ -49,7 +49,7 @@ export function VerCursos()
     const finalizarMatricula = async () => {
       const idEstudiante = "10231663981";
       const response = await fetch(
-        `https://matriculasudeaservice-appmatriculasudea.azuremicroservices.io/finalizarMatricula/${idEstudiante}`,
+        `https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`,
         {
           method: "POST",
         }
@@ -108,7 +108,7 @@ export function VerCursos()
     
 
     return (
-        <div className="container">
+        <div className="container-cursos">
           { mostrarBoton ? 
             <button onClick={cursosMatricula} id="boton-matricula">Iniciar Matricula</button> : null 
           }

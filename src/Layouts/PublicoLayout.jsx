@@ -1,11 +1,13 @@
+
 import './Styles/StylesLayouts.css';
+import { Navba } from '../Components/NavbaComponent';
 
 export function PublicoLayout({children})
 {
     return (
-        <div className="contenedor-publico">
-            <span>Creamos un componente Navbar</span>
-            <main className="cuerpo-publico">                
+        <div className="contenedorLayoutHorizontal">
+            <Navba/>
+            <main className="cuerpo">                
                 {children}
             </main>
         </div>

@@ -5,10 +5,14 @@
   padding: 2rem;
   text-align: center;
   color: #000000;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
-  background: linear-gradient(45deg,#dee8de ,  #c7ebba);
+  background:whitesmoke;
   margin: 0;
   padding: 0;
 }
@@ -79,7 +83,7 @@ td button{
 }
 /*-----------------------------FIN ESTILOS TABLA-------------------------------*/
 
-.container {
+.container-cursos {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -95,30 +99,31 @@ table {
 
 
 /* Estilos de la caja contenedora */
-.container {
-  height: 300px; /* Altura de la caja */
+.container-cursos {
+  height: 590px; /* Altura de la caja */
   border: 1px solid #444; /* Borde */
   border-radius: 5px; /* Borde redondeado */
   overflow: auto; /* Scrollbar sólo cuando sea necesario */
   box-shadow: 2px 2px 5px #222; /* Sombra */
   background-color:white; /* Color de fondo */
   padding: 10px; /* Espacio interno */
-  width: 700px; height: 510px;
+  margin: auto 0;
   color: #000000;
 }
 
+
 /* Estilos de la scrollbar */
-.container::-webkit-scrollbar {
+.container-cursos::-webkit-scrollbar {
   width: 8px; /* Ancho */
   height: 8px;
 }
 
-.container::-webkit-scrollbar-thumb {
+.container-cursos::-webkit-scrollbar-thumb {
   background-color: #666; /* Color del thumb */
   border-radius: 10px; /* Borde redondeado */
 }
 
-.container::-webkit-scrollbar-track {
+.container-cursos::-webkit-scrollbar-track {
   background-color: #333; /* Color del track */
 }
 
@@ -165,3 +170,10 @@ table {
 
 }
 
+#app{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

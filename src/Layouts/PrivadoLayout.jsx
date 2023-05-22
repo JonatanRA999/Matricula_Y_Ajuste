@@ -1,12 +1,13 @@
 
+import Sidebar from '../Components/SidebarComponent';
 import './Styles/StylesLayouts.css';
 
 export function PrivadoLayout({children})
 {
     return(
-        <div className='contenedor-publico'>
-            <span>Aqui va el sidebar</span>
-            <main className='cuerpo-publico'>
+        <div className='contenedorLayoutVertical'>
+            <Sidebar/>
+            <main className='cuerpo'>
                 {children}
             </main>
         </div>

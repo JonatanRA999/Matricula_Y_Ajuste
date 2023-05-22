@@ -3,9 +3,9 @@ import './Styles/StylesLayouts.css'
 export function LoginLayout({children})
 {
     return (
-        <div className="contenedor-publico">
+        <div className="contenedorLa">
             <h1 id='titulo-login' data-text="UdeA"></h1>
-            <main className="cuerpo-publico">
+            <main className="cuerpo">
                 {children}
             </main>
         </div>
