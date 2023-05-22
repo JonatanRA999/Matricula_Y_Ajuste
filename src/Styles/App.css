@@ -100,7 +100,7 @@ table {
 
 /* Estilos de la caja contenedora */
 .container-cursos {
-  height: 590px; /* Altura de la caja */
+  height: 500px; width: 600px;/* Altura de la caja */
   border: 1px solid #444; /* Borde */
   border-radius: 5px; /* Borde redondeado */
   overflow: auto; /* Scrollbar sólo cuando sea necesario */

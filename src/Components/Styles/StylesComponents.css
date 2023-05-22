@@ -9,10 +9,19 @@
 }
 
 
-.custom-nav {
+.custom-nav-vertical {
     border: 1px solid black; /* Agrega un borde sólido de color negro */
     padding: 10px; /* Añade un relleno para resaltar el componente */
     /* Otros estilos personalizados que desees agregar */
+    margin-top: 5px;
+    background: linear-gradient(45deg, #e9ecec, #055243d4);
+    border: none;
+    border-radius: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
   }
 
   .custom-navbar {
@@ -26,5 +35,23 @@
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 25px;
+    transition: background-color 0.3s white;
   }
   
+  .custom-button:hover {
+    background-color: rgb(92, 210, 100);
+    color: azure;
+  }
+  
+  .additional-text {
+    margin-top: auto;
+    background-color: rgba(124, 247, 99, 0.2);
+    font-weight: bold;
+  }
+
+  .titulos{
+    color: black;
+    font-weight: 30em;
+    font-size: 25px;
+
+  }

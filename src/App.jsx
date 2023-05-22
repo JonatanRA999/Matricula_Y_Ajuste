@@ -9,6 +9,7 @@ import {Oferta} from './Pages/OfertaPage';
 import {PublicoLayout} from './Layouts/PublicoLayout';
 import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
+import Index from './Pages/IndexPages';
 
 
 function App() 
@@ -18,12 +19,13 @@ function App()
      <Router>
         <Switch>
           
-          <Route path={['/calendario','/oferta','/matricula']}>
+          <Route path={['/calendario','/oferta','/matricula','/inicio']}>
               <PrivadoLayout>
                 <Switch>
                   <Route path='/calendario'> <Calendario/> </Route>
                   <Route path='/oferta'> <Oferta/> </Route>
                   <Route path='/matricula'> <Matricula/> </Route>
+                  <Route path='/inicio'><Index/></Route>
                 </Switch>
               </PrivadoLayout>            
           </Route>

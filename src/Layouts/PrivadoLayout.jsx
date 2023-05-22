@@ -7,7 +7,7 @@ export function PrivadoLayout({children})
     return(
         <div className='contenedorLayoutVertical'>
             <Sidebar/>
-            <main className='cuerpo'>
+            <main className='cuerpo1'>
                 {children}
             </main>
         </div>
