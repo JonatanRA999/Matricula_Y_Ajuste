@@ -4,7 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import LogoImage from './images/Logosímbolo+Universidad+de+Antioquia+horizontal+®-01.png';
 import './Styles/StylesComponents.css'
+
 import {Link} from 'react-router-dom';
+
 
 export function Navba() {
   return (
@@ -20,7 +22,9 @@ export function Navba() {
           />
         </Navbar.Brand>
         <Nav className="ml-auto">
+
         <Link to="/ingresar" className="custom-button">Ingresar</Link>
+
         </Nav>
       </Container>
     </Navbar>

@@ -1,4 +1,5 @@
 import './Styles/StylesLayouts.css'
+
 import { Link, Outlet } from 'react-router-dom';
 export function LoginLayout()
 {
@@ -7,9 +8,12 @@ export function LoginLayout()
             <Link to='/'><h1 id='titulo-login' data-text="UdeA"></h1></Link>
             <main className="cuerpo">
             <Outlet/>
+
             </main>
         </div>
     );
 }
+
+
 
 
