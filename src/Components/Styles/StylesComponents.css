@@ -1,0 +1,109 @@
+.nav-container{
+  height: 70px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+
+.custom-nav-vertical {
+    border: 1px solid black; /* Agrega un borde sólido de color negro */
+    padding: 10px; /* Añade un relleno para resaltar el componente */
+    /* Otros estilos personalizados que desees agregar */
+    margin-top: 5px;
+
+    background: linear-gradient(45deg, #bed9d9, #15987ed4);
+
+    border: none;
+    border-radius: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    text-align: left;
+  }
+  
+  .custom-navbar {
+    background: linear-gradient(45deg, #e9ecec, #055243d4);
+    border-radius: 10px;
+  }
+
+  .custom-button {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 25px;
+    transition: background-color 0.3s white;
+  }
+  
+  .custom-button:hover {
+    background-color: rgb(92, 210, 100);
+    color: azure;
+  }
+  
+  .additional-text {
+    margin-top: auto;
+    background-color: rgba(124, 247, 99, 0.2);
+    font-weight: bold;
+  }
+
+  .titulos{
+    color: black;
+    font-weight: 30em;
+    font-size: 25px;
+
+    padding-top: 10px;
+    text-align: center;
+
+  }
+
+  .titulos:hover{
+    color:rgb(191, 249, 249);
+  }
+
+  #tabla-calendario {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    
+  }
+  
+  #tabla-calendario td, #tabla-calendario th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #tabla-calendario th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #tabla-calendario caption {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para las filas alternas */
+  #tabla-calendario tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para el primer elemento de la columna */
+  #tabla-calendario td:first-child, #tabla-calendario th:first-child {
+    text-align: left;
+  }
+.centrar-en-tabla{
+  text-align: center;
+}
+
+#tabla-calendario{
+  height: 350px;
+  
+}
