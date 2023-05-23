@@ -1,16 +1,15 @@
 import './Styles/StylesLayouts.css'
-
-export function LoginLayout({children})
+import { Link, Outlet } from 'react-router-dom';
+export function LoginLayout()
 {
     return (
         <div className="contenedorLa">
-            <h1 id='titulo-login' data-text="UdeA"></h1>
+            <Link to='/'><h1 id='titulo-login' data-text="UdeA"></h1></Link>
             <main className="cuerpo">
-                {children}
+            <Outlet/>
             </main>
         </div>
     );
 }
 
-import './Styles/StylesLayouts.css';
 
