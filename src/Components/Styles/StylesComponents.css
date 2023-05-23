@@ -14,7 +14,7 @@
     padding: 10px; /* Añade un relleno para resaltar el componente */
     /* Otros estilos personalizados que desees agregar */
     margin-top: 5px;
-    background: linear-gradient(45deg, #bed9d9, #159078d4);
+    background: linear-gradient(45deg, #bed9d9, #15987ed4);
     border: none;
     border-radius: 5px;
     padding-left: 50px;
@@ -54,6 +54,8 @@
     color: black;
     font-weight: 30em;
     font-size: 25px;
+    padding-top: 10px;
+    text-align: center;
   }
 
   .titulos:hover{

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
-  const history = useHistory([]);
+  const navigate = useNavigate();
   const [userId, setUserId] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -18,7 +18,7 @@ function Login() {
   const handleFormSubmit = () => {
     
     // Redireccionar a la página específica
-    history.push('/inicio');
+    navigate('/inicio');
   };
 
   return (

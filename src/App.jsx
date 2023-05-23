@@ -1,6 +1,6 @@
 import './Styles/App.css';
 import './Styles/Style.css';
-import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Ingresar } from './Pages/IngresarPages';
 import {Inicio} from './Pages/InicioPage';
 import {Calendario} from './Pages/CalendarioPage';
@@ -9,46 +9,36 @@ import {Oferta} from './Pages/OfertaPage';
 import {PublicoLayout} from './Layouts/PublicoLayout';
 import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
-import Index from './Pages/IndexPages';
+import {Index } from './Pages/IndexPages'
 
 
 function App() 
 {
   return (
     <div id='app'>
-     <Router>
-        <Switch>
-          
-          <Route path={['/calendario','/oferta','/matricula','/inicio']}>
-              <PrivadoLayout>
-                <Switch>
-                  <Route path='/calendario'> <Calendario/> </Route>
-                  <Route path='/oferta'> <Oferta/> </Route>
-                  <Route path='/matricula'> <Matricula/> </Route>
-                  <Route path='/inicio'><Index/></Route>
-                </Switch>
-              </PrivadoLayout>            
-          </Route>
-          
-          <Route path={['/ingresar']}>
-            <LoginLayout>
-              <Switch>
-                <Route path='/'> <Ingresar/> </Route>
-              </Switch>
-            </LoginLayout>
-          </Route>
-
-          <Route path={['/']}>
-            <PublicoLayout>
-              <Switch>
-                <Route path='/'> <Inicio/> </Route>
-              </Switch>
-            </PublicoLayout>
-          </Route>
-
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<PublicoLayout />}>
+          <Route index element={<Inicio />} />
+        </Route>
+        <Route path='/ingresar' element={<LoginLayout />}>
+          <Route index element={<Ingresar />} />
+        </Route>
+        <Route path='/calendario' element={<PrivadoLayout />}>
+          <Route index element={<Calendario />} />
+        </Route>
+        <Route path='/matricula' element={<PrivadoLayout />}>
+          <Route index element={<Matricula />} />
+        </Route>
+        <Route path='/oferta' element={<PrivadoLayout />}>
+          <Route index element={<Oferta />} />
+        </Route>
+        <Route path='/inicio' element={<PrivadoLayout />}>
+          <Route index element={<Index />} />
+        </Route>
+      </Routes>
+    </Router>
+  </div>
   )
 }
 

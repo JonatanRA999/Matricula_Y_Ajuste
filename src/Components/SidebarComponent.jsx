@@ -5,14 +5,16 @@ import {Link} from 'react-router-dom';
 function Sidebar() {
   return (
     <Nav defaultActiveKey="/incio" className="flex-column custom-nav-vertical">
-      <Nav.Link href="/calendario" className='titulos'>Calendario</Nav.Link>
-      <Nav.Link href="/oferta" className='titulos'>Oferta</Nav.Link>
-      <Nav.Link href="/matricula" className='titulos'>Matricula</Nav.Link>
+      <Link to="/calendario" className='titulos'>Calendario</Link>
+      <Link to="/oferta" className='titulos'>Oferta</Link>
+      <Link to="/matricula" className='titulos'>Matricula</Link>
+      <Link className='titulos'>
       <Nav.Link eventKey="disabled" className='titulos' disabled>
         Constancia
       </Nav.Link>
-      <Nav.Link href="/" className="additional-text" ><h1 >UdeA</h1></Nav.Link>
+      </Link>
       
+      <Link to="/" className="additional-text" ><h1 >UdeA</h1></Link>
     </Nav>
   );
 }

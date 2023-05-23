@@ -4,7 +4,7 @@ export function Ingresar()
 {
     return(
         <div>
-            <h1 className='titulo-inicio'>Inicia Sesión</h1>
+            <h1 className='titulo-inicio'>Iniciar Sesión</h1>
             <Login></Login>
         </div>
     );
