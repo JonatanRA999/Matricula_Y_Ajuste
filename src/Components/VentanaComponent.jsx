@@ -41,10 +41,12 @@ export function PopupButton() {
             })
               .then((response) => response.json())
               .then((data) => {
-                console.log("Curso registrado exitosamente:", data);
+                console.log(data.message);
+                alert(data.message);
               })
               .catch((error) => {
-                console.error("Error al registrar curso:", error);
+                console.error(error.message);
+                alert(error.message);
               });
           });
 

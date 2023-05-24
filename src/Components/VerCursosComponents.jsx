@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PopupButton } from "./VentanaComponent"; 
+import {OfertaComponent} from './OfertaComponent';
 
 export function VerCursos()
 {
@@ -55,18 +56,13 @@ export function VerCursos()
         }
       );
     
-      if (response.ok) {
-        setMostrarMensajeFinal("La matricula ha sido exitosa");
-        setMostrarMensajeFinalizado(true);
-      }else{
-        setMostrarMensajeFinal("Ha ocurrido un error al procesar la matricula");
-      }
-    
+      
       setMostrarContenido(false);
       setMostrarBoton(false);
 
       const data = await response.json();
       console.log(data); // Imprime la respuesta de la API en la consola
+      alert(data.message);
     };
     
 
@@ -149,7 +145,7 @@ export function VerCursos()
           }
 
           {mostrarMensajeFinalizado ? (
-                <button id="mensaje-final">{mostrarMensajeFinal}</button>
+                <OfertaComponent/>
               ) : null}
           
           {
