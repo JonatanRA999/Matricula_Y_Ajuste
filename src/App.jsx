@@ -1,5 +1,6 @@
 import './Styles/App.css';
 import './Styles/Style.css';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Ingresar } from './Pages/IngresarPages';
 import {Inicio} from './Pages/InicioPage';
@@ -10,12 +11,21 @@ import {PublicoLayout} from './Layouts/PublicoLayout';
 import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
 import {Index } from './Pages/IndexPages'
+import { IdUser } from './Context/idUsuario';
 
 
 function App() 
 {
+  const [id ,setId] = useState("");
+
+  useEffect(()=>{
+    console.log("Tu ide es ", id);
+  },[id])
+
   return (
     <div id='app'>
+
+    <IdUser.Provider value={{id, setId}}>
     <Router>
       <Routes>
         <Route path='/' element={<PublicoLayout />}>
@@ -38,6 +48,8 @@ function App()
         </Route>
       </Routes>
     </Router>
+    </IdUser.Provider>
+    
   </div>
   )
 }

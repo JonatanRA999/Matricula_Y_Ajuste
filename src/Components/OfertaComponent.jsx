@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import './Styles/StylesComponents.css'
-
+import { idUsuario } from '../Context/idUsuario';
 
 export function OfertaComponent()
 {
+    const {id} = idUsuario();
     const [listadoCursos, setListadoCursos] = useState([]);
     useEffect(() => {
       obtenerCursos();
@@ -11,28 +12,17 @@ export function OfertaComponent()
   
     const obtenerCursos = async () =>
     {
-      const idEstudiante = "10231663981";
+
+      const idEstudiante = id;
+      console.log("ide del : ",idEstudiante)
         const cursos = await fetch(
           `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
         ).then((response) => response.json());
   
         setListadoCursos(cursos);
-     
+        
     };
   
-    const finalizarMatricula = async () => {
-      const idEstudiante = "10231663981";
-      try {
-        const response = await fetch(
-          `https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`,
-          {
-            method: "POST",
-          }
-        );
-      } catch (error) {
-        console.log(error);
-      }
-    };
     return (
         <div >
               <table id="tabla-calendario">
