@@ -11,7 +11,9 @@ import {Link} from 'react-router-dom';
 export function Navba() {
   return (
     <Navbar className="custom-navbar">
-      <Container>
+
+      <Container id='elementos-nav-horizontal'>
+
         <Navbar.Brand>
           <img
             src={LogoImage}

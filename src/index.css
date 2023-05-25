@@ -18,7 +18,9 @@
     margin: 0;
     display: flex;
     place-items: center;
-    
+
+    width: 100vw; /* Ancho deseado del elemento padre */
+    height: 100vh;
   }
   
   h1 {
@@ -26,6 +28,7 @@
     line-height: 1.1;
   }
   
+
   button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -39,6 +42,7 @@
   }
   button:hover {
     border-color: #646cff;
+
   }
   button:focus,
   button:focus-visible {
@@ -47,3 +51,8 @@
   h1{
     color:#1a1a1a;
   }
+
+html{
+  height: 100%;
+}
+

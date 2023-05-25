@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-
 import { motion, AnimatePresence } from "framer-motion";
 import "./Styles/StylesComponents.css";
 import { idUsuario } from "../Context/idUsuario";
 
-
-export function OfertaComponent() {
+export function ConstanciaComponent() {
   const { id } = idUsuario();
   const [listadoCursos, setListadoCursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,20 +14,17 @@ export function OfertaComponent() {
 
   const obtenerCursos = async () => {
     const idEstudiante = id;
-    console.log("ID del estudiante:", idEstudiante);
+    console.log("id del estudiante:", idEstudiante);
 
-    try {
-      const cursos = await fetch(
-        `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
-      ).then((response) => response.json());
+    const response = await fetch(
+      `https://matriculaajustesapi-santiagobedoyao.b4a.run/consultarMatricula/${idEstudiante}`
+    );
+    const data = await response.json();
 
-      setListadoCursos(cursos);
-    } catch (error) {
-      console.log("Error al obtener los cursos:", error);
-      toast.error("No es posible cargar la página. Por favor, inténtalo nuevamente más tarde.");
-    } finally {
-      setIsLoading(false);
+    if (data.Registros) {
+      setListadoCursos(data.Registros);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -48,27 +43,27 @@ export function OfertaComponent() {
           <table id="tabla-calendario">
             <thead>
               <tr>
-                <th>Codigo</th>
-                <th id="centrar">Nombre</th>
-                <th>Créditos</th>
+                <th>Estado</th>
+                <th>Nombre</th>
+                <th id="centrar">Horario</th>
+                <th>Creditos</th>
               </tr>
             </thead>
             <tbody>
               {listadoCursos.map((curso, index) => (
                 <tr key={index}>
-                  <td className="center">{curso.Codigo}</td>
-                  <td className="center">{curso.Nombre}</td>
-                  <td className="center centrar-en-tabla">{curso.Creditos}</td>
+                  <td className="center">{curso.EstadoRegistro}</td>
+                  <td className="center">{curso.NombreCurso}</td>
+                  <td className="center">{curso.HorarioCurso}</td>
+                  <td className="center centrar-en-tabla">{curso.CreditosCurso}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         ) : (
-          <div className="info-card">No tienes Oferta de cursos</div>
+          <div className="info-card">No tienes constancia de matricula</div>
         )}
       </AnimatePresence>
     </div>
   );
 }
-
-

@@ -1,9 +1,12 @@
 import Login from "../Components/LoginComponent";
 
+
 export function Ingresar()
 {
     return(
-        <div>
+
+        <div className="iniciar-sesion-container">
+
 
             <h1 className='titulo-inicio'>Iniciar Sesión</h1>
 
