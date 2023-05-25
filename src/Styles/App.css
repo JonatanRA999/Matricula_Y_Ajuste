@@ -15,7 +15,7 @@
 }
 
 body {
-  background:whitesmoke;
+  background: linear-gradient(135deg, #eef9f4, #c5f0d9);
   margin: 0;
   padding: 0;
 }
