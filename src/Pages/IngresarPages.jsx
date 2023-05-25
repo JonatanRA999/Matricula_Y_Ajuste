@@ -7,6 +7,7 @@ export function Ingresar()
 
         <div className="iniciar-sesion-container">
 
+
             <h1 className='titulo-inicio'>Iniciar Sesión</h1>
 
             <Login></Login>

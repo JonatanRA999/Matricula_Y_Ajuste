@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+
 import { idUsuario } from '../Context/idUsuario';
 
 function Login() {
   const { setId } = idUsuario();
+
   const navigate = useNavigate();
 
   const [userId, setUserId] = useState('');
@@ -13,6 +15,7 @@ function Login() {
   const handleInputChange = (event) => {
     const input = event.target.value;
     const numericInput = input.replace(/\D/, ''); // Eliminar cualquier carácter que no sea un número
+
     const truncatedInput = numericInput.slice(0, 11); // Limitar la entrada a 10 dígitos
     setUserId(truncatedInput);
     setIsButtonDisabled(truncatedInput.length === 0);
@@ -21,6 +24,7 @@ function Login() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     // Redireccionar a la página específica
 
     navigate('/inicio');
@@ -32,6 +36,7 @@ function Login() {
       <form className="login-form" onSubmit={handleFormSubmit}>
         <h1 id="usuario-id">ID de usuario</h1>
         <div className="textb">
+
           <input
             type="text"
             value={userId}
@@ -41,6 +46,7 @@ function Login() {
             required
             inputMode="numeric" // Permitir solo entrada numérica
           />
+
         </div>
         <button className="btn fas fa-arrow-right" disabled={isButtonDisabled} onClick={handleFormSubmit}></button>
       </form>

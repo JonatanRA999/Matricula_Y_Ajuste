@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PopupButton } from "./VentanaComponent"; 
+
 import { idUsuario } from '../Context/idUsuario';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,16 +10,21 @@ export function VerCursos()
     const notify = () => toast("Wow so easy!");
 
     const {id} = idUsuario();
+
     const [mostrarBoton, setMostrarBoton] = useState(true);
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
     const [mostrarMensaje, setMostrarMensaje] = useState("");
+
+
     const [mostrarMensajeFinalizado, setMostrarMensajeFinalizado] = useState(false);
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
     const cursosMatricula = async () => {
+
       const idEstudiante = id;
+
       const response = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`,
         {
@@ -52,6 +58,7 @@ export function VerCursos()
     };
 
     const finalizarMatricula = async () => {
+
       const idEstudiante = id;
       try {
         const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`, {
@@ -73,6 +80,7 @@ export function VerCursos()
       {
         toast.error('Ocurrió un error al finalizar la matrícula');
       }
+
     };
     
 
@@ -140,7 +148,9 @@ export function VerCursos()
                       <td className="center centrar-en-tabla">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
+
                         <PopupButton codigoCurso={curso.Codigo} />
+
                       </td>
                     </tr>
                   ))}
@@ -155,7 +165,9 @@ export function VerCursos()
           }
 
           {mostrarMensajeFinalizado ? (
+
                 <ToastContainer position="top-center"/>
+
               ) : null}
           
           {

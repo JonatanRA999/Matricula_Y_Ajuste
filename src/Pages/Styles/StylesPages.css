@@ -8,6 +8,7 @@
 .contenedorInicioPage
 {
     
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,4 +47,5 @@
 
 .iniciar-sesion-container{
   width: 100vw;
+
 }

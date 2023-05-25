@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import "./Styles/StylesComponents.css";
 import { idUsuario } from "../Context/idUsuario";
@@ -69,4 +70,5 @@ export function OfertaComponent() {
     </div>
   );
 }
+
 
