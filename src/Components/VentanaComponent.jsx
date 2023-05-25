@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { idUsuario } from '../Context/idUsuario';
 
 /***API PARA ESTUDIANTES https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes */
-export function PopupButton()
+export function PopupButton({ codigoCurso })
  {
   
   const {id} = idUsuario();
@@ -15,7 +15,7 @@ export function PopupButton()
     const top = window.innerHeight / 2 - height / 2;
 
     setTimeout(() => {
-      fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/10009")
+      fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/${codigoCurso}`)
         .then((response) => response.json())
         .then((data) => {
           const popup = window.open(

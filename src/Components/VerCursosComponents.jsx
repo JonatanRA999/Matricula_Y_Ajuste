@@ -132,7 +132,7 @@ export function VerCursos()
                       <td className="center centrar-en-tabla">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
-                        <PopupButton/>
+                        <PopupButton codigoCurso={curso.Codigo} />
                       </td>
                     </tr>
                   ))}
