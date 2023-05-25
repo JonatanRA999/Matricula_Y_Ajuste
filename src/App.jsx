@@ -1,7 +1,10 @@
 import './Styles/App.css';
 import './Styles/Style.css';
+
 import { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Ingresar } from './Pages/IngresarPages';
 import {Inicio} from './Pages/InicioPage';
 import {Calendario} from './Pages/CalendarioPage';
@@ -10,9 +13,11 @@ import {Oferta} from './Pages/OfertaPage';
 import {PublicoLayout} from './Layouts/PublicoLayout';
 import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
+
 import {Index } from './Pages/IndexPages'
 import { IdUser } from './Context/idUsuario';
 import { Constancia } from './Pages/ConstanciaPage';
+
 
 
 function App() 
@@ -26,7 +31,9 @@ function App()
   return (
     <div id='app'>
 
+
     <IdUser.Provider value={{id, setId}}>
+
     <Router>
       <Routes>
         <Route path='/' element={<PublicoLayout />}>
@@ -55,6 +62,7 @@ function App()
     </IdUser.Provider>
     
   </div>
+
   )
 }
 
