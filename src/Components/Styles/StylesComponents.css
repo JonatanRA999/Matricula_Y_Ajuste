@@ -69,7 +69,8 @@
   #tabla-calendario {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 700px;
+    height: 400px;
     font-weight: bold;
     font-size: 18px;
     
@@ -110,3 +111,4 @@
 #elementos-nav-horizontal{
   width: 100%;
 }
+

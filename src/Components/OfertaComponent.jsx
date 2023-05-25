@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import './Styles/StylesComponents.css'
 import { idUsuario } from '../Context/idUsuario';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function OfertaComponent()
 {
