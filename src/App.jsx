@@ -12,6 +12,7 @@ import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
 import {Index } from './Pages/IndexPages'
 import { IdUser } from './Context/idUsuario';
+import { Constancia } from './Pages/ConstanciaPage';
 
 
 function App() 
@@ -42,6 +43,9 @@ function App()
         </Route>
         <Route path='/oferta' element={<PrivadoLayout />}>
           <Route index element={<Oferta />} />
+        </Route>
+        <Route path='/constancia' element={<PrivadoLayout />}>
+          <Route index element={<Constancia />} />
         </Route>
         <Route path='/inicio' element={<PrivadoLayout />}>
           <Route index element={<Index />} />
