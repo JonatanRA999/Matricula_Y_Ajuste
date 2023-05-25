@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { idUsuario } from '../Context/idUsuario';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 /***API PARA ESTUDIANTES https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes */
 export function PopupButton({ codigoCurso })
  {
@@ -47,11 +48,30 @@ export function PopupButton({ codigoCurso })
               .then((response) => response.json())
               .then((data) => {
                 console.log(data.message);
-                alert(data.message);
+                toast.success('✔ '+data.message, {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: "light",
+                  });
+                
               })
               .catch((error) => {
                 console.error(error.message);
-                alert(error.message);
+                toast.error('🦄 '+error.message, {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: "light",
+                  });
               });
           });
 
@@ -82,7 +102,8 @@ export function PopupButton({ codigoCurso })
       <button onClick={openPopup}>Seleccionar</button>
       {selectedOption && (
         <div>Horario: {selectedOption.Horario}</div>
-      )}
+      ) ? <ToastContainer/> :null
+      }
     </div>
   );
 }

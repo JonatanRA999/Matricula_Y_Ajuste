@@ -1,51 +1,67 @@
 import { useState, useEffect } from "react";
-import './Styles/StylesComponents.css'
-import { idUsuario } from '../Context/idUsuario';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { motion, AnimatePresence } from "framer-motion";
+import "./Styles/StylesComponents.css";
+import { idUsuario } from "../Context/idUsuario";
 
-export function OfertaComponent()
-{
-    const {id} = idUsuario();
-    const [listadoCursos, setListadoCursos] = useState([]);
-    useEffect(() => {
-      obtenerCursos();
-    }, []);
-  
-    const obtenerCursos = async () =>
-    {
+export function OfertaComponent() {
+  const { id } = idUsuario();
+  const [listadoCursos, setListadoCursos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Variable de estado para controlar el estado de carga
 
-      const idEstudiante = id;
-      console.log("ide del : ",idEstudiante)
-        const cursos = await fetch(
-          `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
-        ).then((response) => response.json());
-  
-        setListadoCursos(cursos);
-        
-    };
-  
-    return (
-        <div >
-              <table id="tabla-calendario">
-                <thead>
-                  <tr>
-                    <th>Codigo</th>
-                    <th id="centrar">Nombre</th>
-                    <th>Créditos</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {listadoCursos.map((curso, index) => (
-                    <tr key={index}>
-                      <td className="center">{curso.Codigo}</td>
-                      <td className="center">{curso.Nombre}</td>
-                      <td className="center centrar-en-tabla" >{curso.Creditos}</td>
+  useEffect(() => {
+    obtenerCursos();
+  }, []);
 
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-        </div>
-      );
+  const obtenerCursos = async () => {
+    const idEstudiante = id;
+    console.log("ID del estudiante:", idEstudiante);
+
+    try {
+      const cursos = await fetch(
+        `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
+      ).then((response) => response.json());
+
+      setListadoCursos(cursos);
+    } catch (error) {
+      console.log("Error al obtener los cursos:", error);
+    } finally {
+      setIsLoading(false); // Marcar el estado de carga como false después de recibir la respuesta o al producirse un error
+    }
+  };
+
+  return (
+    <div>
+      <AnimatePresence>
+        {isLoading ? (
+          <motion.div
+            className="loading-animation"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="loading-circle" />
+          </motion.div>
+        ) : (
+          <table id="tabla-calendario">
+            <thead>
+              <tr>
+                <th>Codigo</th>
+                <th id="centrar">Nombre</th>
+                <th>Créditos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listadoCursos.map((curso, index) => (
+                <tr key={index}>
+                  <td className="center">{curso.Codigo}</td>
+                  <td className="center">{curso.Nombre}</td>
+                  <td className="center centrar-en-tabla">{curso.Creditos}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }

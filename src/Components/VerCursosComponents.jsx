@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { PopupButton } from "./VentanaComponent"; 
 import { idUsuario } from '../Context/idUsuario';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function VerCursos()
 {
+    const notify = () => toast("Wow so easy!");
+
     const {id} = idUsuario();
     const [mostrarBoton, setMostrarBoton] = useState(true);
     const [mostrarContenido, setMostrarContenido] = useState(false);
@@ -50,22 +53,26 @@ export function VerCursos()
 
     const finalizarMatricula = async () => {
       const idEstudiante = id;
-      const response = await fetch(
-        `https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`,
-        {
-          method: "POST",
-        }
-      );
+      try {
+        const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`, {
+          method: 'POST',
+        });
     
-      
-      setMostrarContenido(false);
-      setMostrarBoton(false);
-      setMostrarMensajeFinalizado(true)
-
-      const data = await response.json();
-      console.log(data); // Imprime la respuesta de la API en la consola
-      alert(data.message);
-      
+        if (response.ok) {
+          setMostrarContenido(false);
+          setMostrarBoton(false);
+          setMostrarMensajeFinalizado(true);
+    
+          const data = await response.json();
+          console.log(data); // Imprime la respuesta de la API en la consola
+          toast.success(data.message);
+        } else {
+          throw new Error('Error al finalizar la matrícula');
+        }
+      } catch (error) 
+      {
+        toast.error('Ocurrió un error al finalizar la matrícula');
+      }
     };
     
 
@@ -148,7 +155,7 @@ export function VerCursos()
           }
 
           {mostrarMensajeFinalizado ? (
-                <button>excelente</button>
+                <ToastContainer position="top-center"/>
               ) : null}
           
           {
