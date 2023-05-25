@@ -1,18 +1,21 @@
 
 #root {
-  max-width: 1280px;
+  
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   color: #000000;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: relative;
   font-family: 'Oswald', sans-serif;
+  padding: 0;
+  
+  
 }
 
 body {
-  background:whitesmoke;
+  background: linear-gradient(135deg, #eef9f4, #c5f0d9);
   margin: 0;
   padding: 0;
 }
@@ -100,14 +103,14 @@ table {
 
 /* Estilos de la caja contenedora */
 .container-cursos {
-  height: 500px; width: 620px;/* Altura de la caja */
+  height: 510px; width: 625px;/* Altura de la caja */
   border: 1px solid #444; /* Borde */
   border-radius: 5px; /* Borde redondeado */
   overflow: auto; /* Scrollbar sólo cuando sea necesario */
   box-shadow: 2px 2px 5px #222; /* Sombra */
   background-color:white; /* Color de fondo */
   padding: 10px; /* Espacio interno */
-  margin: auto 0;
+  margin: 0 auto;
   color: #000000;
 }
 
@@ -171,9 +174,8 @@ table {
 }
 
 #app{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0px;
 }

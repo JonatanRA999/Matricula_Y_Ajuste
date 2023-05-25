@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
 import { PopupButton } from "./VentanaComponent"; 
+import { idUsuario } from '../Context/idUsuario';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function VerCursos()
 {
+    const notify = () => toast("Wow so easy!");
+
+    const {id} = idUsuario();
     const [mostrarBoton, setMostrarBoton] = useState(true);
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
     const [mostrarMensaje, setMostrarMensaje] = useState("");
-    const [mostrarMensajeFinal, setMostrarMensajeFinal] = useState("");
     const [mostrarMensajeFinalizado, setMostrarMensajeFinalizado] = useState(false);
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
     const cursosMatricula = async () => {
-      const idEstudiante = "1006157087";
+      const idEstudiante = id;
       const response = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`,
         {
@@ -47,26 +52,27 @@ export function VerCursos()
     };
 
     const finalizarMatricula = async () => {
-      const idEstudiante = "1006157087";
-      const response = await fetch(
-        `https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`,
-        {
-          method: "POST",
+      const idEstudiante = id;
+      try {
+        const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`, {
+          method: 'POST',
+        });
+    
+        if (response.ok) {
+          setMostrarContenido(false);
+          setMostrarBoton(false);
+          setMostrarMensajeFinalizado(true);
+    
+          const data = await response.json();
+          console.log(data); // Imprime la respuesta de la API en la consola
+          toast.success(data.message);
+        } else {
+          throw new Error('Error al finalizar la matrícula');
         }
-      );
-    
-      if (response.ok) {
-        setMostrarMensajeFinal("La matricula ha sido exitosa");
-        setMostrarMensajeFinalizado(true);
-      }else{
-        setMostrarMensajeFinal("Ha ocurrido un error al procesar la matricula");
+      } catch (error) 
+      {
+        toast.error('Ocurrió un error al finalizar la matrícula');
       }
-    
-      setMostrarContenido(false);
-      setMostrarBoton(false);
-
-      const data = await response.json();
-      console.log(data); // Imprime la respuesta de la API en la consola
     };
     
 
@@ -134,7 +140,7 @@ export function VerCursos()
                       <td className="center centrar-en-tabla">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
-                        <PopupButton/>
+                        <PopupButton codigoCurso={curso.Codigo} />
                       </td>
                     </tr>
                   ))}
@@ -149,7 +155,7 @@ export function VerCursos()
           }
 
           {mostrarMensajeFinalizado ? (
-                <button id="mensaje-final">{mostrarMensajeFinal}</button>
+                <ToastContainer position="top-center"/>
               ) : null}
           
           {

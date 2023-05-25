@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { idUsuario } from '../Context/idUsuario';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 /***API PARA ESTUDIANTES https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes */
-export function PopupButton() {
+export function PopupButton({ codigoCurso })
+ {
+  
+  const {id} = idUsuario();
   const [selectedOption, setSelectedOption] = useState(null);
 
   const openPopup = () => {
@@ -10,7 +16,7 @@ export function PopupButton() {
     const top = window.innerHeight / 2 - height / 2;
 
     setTimeout(() => {
-      fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/10009")
+      fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/${codigoCurso}`)
         .then((response) => response.json())
         .then((data) => {
           const popup = window.open(
@@ -31,7 +37,7 @@ export function PopupButton() {
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
               method: "POST",
               body: JSON.stringify({
-                "idEstudiante": "1006157087",
+                "idEstudiante": id,
                 //"codigoMatricula": "7411006157087",
                 "codigoHorario": selectedValue
               }),
@@ -41,10 +47,31 @@ export function PopupButton() {
             })
               .then((response) => response.json())
               .then((data) => {
-                console.log("Curso registrado exitosamente:", data);
+                console.log(data.message);
+                toast.success('✔ '+data.message, {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: "light",
+                  });
+                
               })
               .catch((error) => {
-                console.error("Error al registrar curso:", error);
+                console.error(error.message);
+                toast.error('🦄 '+error.message, {
+                  position: "top-right",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: "light",
+                  });
               });
           });
 
@@ -75,7 +102,8 @@ export function PopupButton() {
       <button onClick={openPopup}>Seleccionar</button>
       {selectedOption && (
         <div>Horario: {selectedOption.Horario}</div>
-      )}
+      ) ? <ToastContainer/> :null
+      }
     </div>
   );
 }
