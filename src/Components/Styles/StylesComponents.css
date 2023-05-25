@@ -11,14 +11,13 @@
 
 .custom-nav-vertical {
     border: 1px solid black; /* Agrega un borde sólido de color negro */
-    padding: 10px; /* Añade un relleno para resaltar el componente */
+     /* Añade un relleno para resaltar el componente */
     /* Otros estilos personalizados que desees agregar */
-    margin-top: 5px;
+    margin: 10px;
+    padding: 35px;
     background: linear-gradient(45deg, #bed9d9, #15987ed4);
     border: none;
     border-radius: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: first baseline;
@@ -27,7 +26,11 @@
   
   .custom-navbar {
     background: linear-gradient(45deg, #e9ecec, #055243d4);
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100vw;
+    height: 170px;
+    margin: 0 auto;
   }
 
   .custom-button {
@@ -48,6 +51,7 @@
     margin-top: auto;
     background-color: rgba(124, 247, 99, 0.2);
     font-weight: bold;
+    font-size: 25px;
   }
 
   .titulos{
@@ -55,7 +59,7 @@
     font-weight: 30em;
     font-size: 25px;
     padding-top: 10px;
-    text-align: right;
+    text-align: left;
   }
 
   .titulos:hover{
@@ -102,4 +106,7 @@
 #tabla-calendario{
   height: 350px;
   
+}
+#elementos-nav-horizontal{
+  width: 100%;
 }

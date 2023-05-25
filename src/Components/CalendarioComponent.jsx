@@ -4,7 +4,7 @@ import './Styles/StylesComponents.css';
 export function CalendarioComponent()
 {
   return (
-    <div>
+    <div >
        <table id= "tabla-calendario" >
         <tr>
           <th>Actividad</th>

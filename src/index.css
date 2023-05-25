@@ -18,7 +18,8 @@
     margin: 0;
     display: flex;
     place-items: center;
-    
+    width: 100vw; /* Ancho deseado del elemento padre */
+    height: 100vh;
   }
   
   h1 {

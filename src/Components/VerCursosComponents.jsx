@@ -65,6 +65,7 @@ export function VerCursos()
       const data = await response.json();
       console.log(data); // Imprime la respuesta de la API en la consola
       alert(data.message);
+      
     };
     
 

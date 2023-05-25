@@ -11,15 +11,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+}
+@keyframes waveAnimation {
+  0% {
+    color: #bde0bd; /* Primer color de la ola */
+  }
+  50% {
+    color: #1e8160; /* Segundo color de la ola */
+  }
+  100% {
+    color: #0d4928; /* Tercer color de la ola */
+  }
 }
 
+
 .titulo-inicio{
-    background: linear-gradient(#9beccf, #013d24);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: black;
     text-align: center;
     font-size: 2.9rem;
-    font-weight: 803; 
-    
+    font-weight: 803;
+    margin: 0; 
+    height: 55px;
+    animation: waveAnimation 2s ease-in-out;
+    animation-fill-mode: forwards; 
+}
+
+.todo-el-cuerpo{
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+}
+
+.iniciar-sesion-container{
+  width: 100vw;
 }
