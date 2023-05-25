@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Styles/StylesComponents.css";
 import { idUsuario } from "../Context/idUsuario";
 
+
 export function OfertaComponent() {
   const { id } = idUsuario();
   const [listadoCursos, setListadoCursos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Variable de estado para controlar el estado de carga
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     obtenerCursos();
@@ -24,8 +25,9 @@ export function OfertaComponent() {
       setListadoCursos(cursos);
     } catch (error) {
       console.log("Error al obtener los cursos:", error);
+      toast.error("No es posible cargar la página. Por favor, inténtalo nuevamente más tarde.");
     } finally {
-      setIsLoading(false); // Marcar el estado de carga como false después de recibir la respuesta o al producirse un error
+      setIsLoading(false);
     }
   };
 
@@ -41,7 +43,7 @@ export function OfertaComponent() {
           >
             <div className="loading-circle" />
           </motion.div>
-        ) : (
+        ) : listadoCursos.length > 0 ? (
           <table id="tabla-calendario">
             <thead>
               <tr>
@@ -60,8 +62,11 @@ export function OfertaComponent() {
               ))}
             </tbody>
           </table>
+        ) : (
+          <div className="info-card">No tienes Oferta de cursos</div>
         )}
       </AnimatePresence>
     </div>
   );
 }
+
