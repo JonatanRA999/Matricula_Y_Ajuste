@@ -15,43 +15,43 @@ export function CalendarioComponent()
         </tr>
         <tr>
           <td>Oferta Academica</td>
-          <td>dia/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>21/07/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Matriculas</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>25/07/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Ajustes</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>31/07/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Clases</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>08/08/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Examenes Finales</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>22/11/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Habilitaciones</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>29/11/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Validaciones</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>06/12/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
           <td>Terminación Oficial</td>
-          <td>día/mes/año</td>
-          <td className='centrar-en-tabla'>2023/1</td>
+          <td>15/12/2023</td>
+          <td className='centrar-en-tabla'>2023/2</td>
         </tr>
       </table>
     </div>
