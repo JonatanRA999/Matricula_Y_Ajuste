@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { idUsuario } from '../Context/idUsuario';
 
 function Login() {
   const { setId } = idUsuario();
   const navigate = useNavigate();
+
   const [userId, setUserId] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -20,7 +22,9 @@ function Login() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // Redireccionar a la página específica
+
     navigate('/inicio');
+
   };
 
   return (
