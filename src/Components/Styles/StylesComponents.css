@@ -153,3 +153,8 @@
   background: linear-gradient(45deg, #b6dfcb, #4caf50);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+#boton-imprimir{
+  margin-top: 15px;
+  background-color: #4caf50;
+}

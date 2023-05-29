@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Styles/StylesComponents.css";
 import { idUsuario } from "../Context/idUsuario";
+import { useReactToPrint } from "react-to-print";
+import jsPDF from "jspdf";
 
 export function ConstanciaComponent() {
   const { id } = idUsuario();
   const [listadoCursos, setListadoCursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const tableRef = useRef();
 
   useEffect(() => {
     obtenerCursos();
@@ -27,6 +30,20 @@ export function ConstanciaComponent() {
     setIsLoading(false);
   };
 
+  const handlePrint = useReactToPrint({
+    content: () => tableRef.current,
+    documentTitle: "Tabla de cursos",
+    pageStyle: `
+      @page {
+        size: A4;
+        margin: 20mm;
+      }
+    `,
+    printOptions: {
+      dpi: 300,
+    },
+  });
+
   return (
     <div>
       <AnimatePresence>
@@ -40,17 +57,19 @@ export function ConstanciaComponent() {
             <div className="loading-circle" />
           </motion.div>
         ) : listadoCursos.length > 0 ? (
-          <table id="tabla-calendario">
-            <thead>
-              <tr>
+          <>
+            <div ref={tableRef}>
+              <table id="tabla-calendario">
+                <thead>
+                <tr>
                 <th>Estado</th>
                 <th>Nombre</th>
                 <th id="centrar">Horario</th>
                 <th>Creditos</th>
               </tr>
-            </thead>
-            <tbody>
-              {listadoCursos.map((curso, index) => (
+                </thead>
+                <tbody>
+                {listadoCursos.map((curso, index) => (
                 <tr key={index}>
                   <td className="center">{curso.EstadoRegistro}</td>
                   <td className="center">{curso.NombreCurso}</td>
@@ -58,8 +77,11 @@ export function ConstanciaComponent() {
                   <td className="center centrar-en-tabla">{curso.CreditosCurso}</td>
                 </tr>
               ))}
-            </tbody>
-          </table>
+                </tbody>
+              </table>
+            </div>
+            <button onClick={handlePrint} id="boton-imprimir">Imprimir</button>
+          </>
         ) : (
           <div className="info-card">No tienes constancia de matricula</div>
         )}
