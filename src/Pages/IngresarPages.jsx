@@ -1,4 +1,4 @@
-import Login from "../Components/LoginComponent";
+import { IngresarComponent } from "../Components/IngresarComponent";
 
 
 export function Ingresar()
@@ -7,9 +7,9 @@ export function Ingresar()
 
         <div className="iniciar-sesion-container">
 
-            <h1 className='titulo-inicio'>Iniciar Sesión</h1>
+            <h1 className='titulo-inicio'>Ingresar</h1>
 
-            <Login></Login>
+            <IngresarComponent/>
         </div>
     );
 }

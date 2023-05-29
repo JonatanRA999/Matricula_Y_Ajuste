@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { idUsuario } from '../Context/idUsuario';
 
-function Login() {
+export function IngresarComponent() 
+{
   const { setId } = idUsuario();
   const navigate = useNavigate();
 
@@ -48,4 +49,3 @@ function Login() {
   );
 }
 
-export default Login;
