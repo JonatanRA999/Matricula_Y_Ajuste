@@ -47,3 +47,25 @@
 .iniciar-sesion-container{
   width: 100vw;
 }
+
+@keyframes waveAnimatio {
+  0% {
+    color: #bde0bd; /* Primer color de la ola */
+  }
+  50% {
+    color: #1e8160; /* Segundo color de la ola */
+  }
+  100% {
+    color: #10855e; /* Tercer color de la ola */
+  }
+}
+#titulo-inicio-titulo{
+  color: black;
+  text-align: center;
+  font-size: 2.9rem;
+  font-weight: 803;
+  margin: 0; 
+  height: 55px;
+  animation: waveAnimatio 2s ease-in-out;
+  animation-fill-mode: forwards; 
+}

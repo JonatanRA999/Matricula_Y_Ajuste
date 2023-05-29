@@ -15,7 +15,11 @@
   flex-direction: row;
   }
   .contenedorLogin{
-    height: 100%;
+    height: 100vh;
+    background-image: url("../Images/UdeA.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   
   .cuerpo{

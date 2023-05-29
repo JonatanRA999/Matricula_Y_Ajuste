@@ -16,7 +16,6 @@
     border-radius: 35px;
     height: 100vh;
     width: 100%;
-    
 }
 
 
@@ -26,7 +25,7 @@
     width: 400px;
     padding: 50px 40px;
     border-radius: 10px;
-    background: linear-gradient(45deg,#4CAF50 , rgb(226, 246, 221));
+    background: linear-gradient(45deg,#4CAF50 , rgba(226, 246, 221, 0.428));
 }
 
 
@@ -104,5 +103,5 @@
 }
 
 #usuario-id{
-    font-size: 20px;
+    font-size: 26px;
 }
