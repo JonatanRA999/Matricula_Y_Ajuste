@@ -10,6 +10,7 @@ export function ConstanciaComponent() {
   const [listadoCursos, setListadoCursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const tableRef = useRef();
+  const [estudiante, setEstudiante] = useState(null);
 
   useEffect(() => {
     obtenerCursos();
@@ -44,8 +45,31 @@ export function ConstanciaComponent() {
     },
   });
 
+  useEffect(() => {
+    obtenerEstudiante();
+  }, []);
+  
+  const obtenerEstudiante = async () => {
+    try {
+      const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setEstudiante(data);
+      } else {
+        throw new Error("Error al obtener el estudiante");
+      }
+    } catch (error) {
+      console.log("Error al obtener el estudiante:", error);
+      toast.error("No es posible cargar la información del estudiante. Por favor, inténtalo nuevamente más tarde.");
+    }
+  };
+
   return (
     <div>
+      <div className="info-card-constancia">
+        <div className="titulo-usuario">Nombre: {estudiante && estudiante.Nombres+" "+estudiante.Apellidos}</div>
+        <div className="titulo-usuario">Credito Cursados: {estudiante && estudiante.CreditosCursados}</div>
+      </div>
       <AnimatePresence>
         {isLoading ? (
           <motion.div
@@ -82,9 +106,7 @@ export function ConstanciaComponent() {
             </div>
             <button onClick={handlePrint} id="boton-imprimir">Imprimir</button>
           </>
-        ) : (
-          <div className="info-card">No tienes constancia de matricula</div>
-        )}
+        ) :null}
       </AnimatePresence>
     </div>
   );
