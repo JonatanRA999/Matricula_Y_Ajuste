@@ -100,9 +100,11 @@ export function PopupButton({ codigoCurso })
   return (
     <div>
       <button onClick={openPopup}>Seleccionar</button>
-      {selectedOption && (
-        <div>Horario: {selectedOption.Horario}</div>
-      ) ? <ToastContainer/> :null
+      {selectedOption 
+      ? (<ToastContainer/>) :null
+      }
+      {selectedOption ? (
+        <div>Horario: {selectedOption.Horario}</div>) :null
       }
     </div>
   );
