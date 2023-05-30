@@ -159,9 +159,28 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.info-card-oferta {
+  text-align: left;
+  height: 115px;
+  font-size: 18px;
+  color: #050505;
+  border-radius: 4px;
+  background: linear-gradient(45deg, #67736d, #1fab49);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
 #boton-imprimir{
   margin-top: 15px;
   background-color: #4caf50;
   font-size: 17px;
   color: aliceblue;
+}
+
+.titulo-usuario{
+  color: #e9ecec;
+  font-size: 19px;
 }

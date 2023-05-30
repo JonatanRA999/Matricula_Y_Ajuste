@@ -8,6 +8,8 @@ export function OfertaComponent() {
   const { id } = idUsuario();
   const [listadoCursos, setListadoCursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [estudiante, setEstudiante] = useState(null);
+
 
   useEffect(() => {
     obtenerCursos();
@@ -20,6 +22,7 @@ export function OfertaComponent() {
     try {
       const cursos = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
+        
       ).then((response) => response.json());
 
       setListadoCursos(cursos);
@@ -31,8 +34,36 @@ export function OfertaComponent() {
     }
   };
 
+  useEffect(() => {
+    obtenerEstudiante();
+  }, []);
+  
+  const obtenerEstudiante = async () => {
+    try {
+      const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setEstudiante(data);
+      } else {
+        throw new Error("Error al obtener el estudiante");
+      }
+    } catch (error) {
+      console.log("Error al obtener el estudiante:", error);
+      toast.error("No es posible cargar la información del estudiante. Por favor, inténtalo nuevamente más tarde.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  
   return (
     <div>
+      <div className="info-card-oferta">
+        <div className="titulo-usuario">Nombre: {estudiante && estudiante.Nombres+" "+estudiante.Apellidos}</div>
+        <div className="titulo-usuario">Identificación: {estudiante && estudiante.NumeroIdentificacion}</div>
+        <div className="titulo-usuario">Semestre: {estudiante && estudiante.SemestreAcademico}</div>
+        <div className="titulo-usuario">Tanda: {estudiante && estudiante.tandaMatricula}</div>
+      </div>
       <AnimatePresence>
         {isLoading ? (
           <motion.div
@@ -62,9 +93,7 @@ export function OfertaComponent() {
               ))}
             </tbody>
           </table>
-        ) : (
-          <div className="info-card">No tienes Oferta de cursos</div>
-        )}
+        ) : null}
       </AnimatePresence>
     </div>
   );
