@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Ingresar } from './Pages/IngresarPages';
+import { Ingresar } from './Pages/IngresarPage';
 import {Inicio} from './Pages/InicioPage';
 import {Calendario} from './Pages/CalendarioPage';
 import {Matricula} from './Pages/MatriculaPage';
@@ -14,7 +14,7 @@ import {PublicoLayout} from './Layouts/PublicoLayout';
 import {PrivadoLayout} from './Layouts/PrivadoLayout';
 import {LoginLayout} from './Layouts/LoginLayout';
 
-import {Index } from './Pages/IndexPages'
+import {InicioMatricula } from './Pages/InicioMatriculaPage';
 import { IdUser } from './Context/idUsuario';
 import { Constancia } from './Pages/ConstanciaPage';
 
@@ -55,7 +55,7 @@ function App()
           <Route index element={<Constancia />} />
         </Route>
         <Route path='/inicio' element={<PrivadoLayout />}>
-          <Route index element={<Index />} />
+          <Route index element={<InicioMatricula />} />
         </Route>
       </Routes>
     </Router>

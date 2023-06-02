@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import './Styles/StylesComponents.css';
 
@@ -11,15 +9,15 @@ export function CalendarioComponent()
         <tr>
           <th>Actividad</th>
           <th>Fecha</th>
-          <th>Semestre Academico</th>
+          <th>Semestre Académico</th>
         </tr>
         <tr>
-          <td>Oferta Academica</td>
+          <td>Oferta Académica</td>
           <td>21/07/2023</td>
           <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
-          <td>Matriculas</td>
+          <td>Matrículas</td>
           <td>25/07/2023</td>
           <td className='centrar-en-tabla'>2023/2</td>
         </tr>
@@ -34,7 +32,7 @@ export function CalendarioComponent()
           <td className='centrar-en-tabla'>2023/2</td>
         </tr>
         <tr>
-          <td>Examenes Finales</td>
+          <td>Exámenes Finales</td>
           <td>22/11/2023</td>
           <td className='centrar-en-tabla'>2023/2</td>
         </tr>

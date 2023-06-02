@@ -1,9 +1,13 @@
+/***API DE USUARIOS PARA INGRESAR A LA MATRICULA
+ *  https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes
+*/
+
 import React, { useState } from "react";
 import { idUsuario } from '../Context/idUsuario';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-/***API PARA ESTUDIANTES https://matriculaajustesapi-santiagobedoyao.b4a.run/estudiantes */
-export function PopupButton({ codigoCurso })
+
+export function Ventana({ codigoCurso })
  {
   
   const {id} = idUsuario();

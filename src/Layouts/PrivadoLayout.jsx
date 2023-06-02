@@ -1,4 +1,3 @@
-
 import Sidebar from '../Components/SidebarComponent';
 import './Styles/StylesLayouts.css';
 import { Outlet } from 'react-router-dom';

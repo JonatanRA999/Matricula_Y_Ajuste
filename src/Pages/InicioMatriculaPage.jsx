@@ -1,11 +1,11 @@
-
 import './Styles/StylesPages.css';
 
-export function Index() {
+export function InicioMatricula() 
+{
 
   return (
     <div className='todo-el-cuerpo'>
-      <h1 className='titulo-inicio'>Modulo de Matricula</h1>
+      <h1 className='titulo-inicio'>Módulo de Matrícula</h1>
     </div>
   )
 }

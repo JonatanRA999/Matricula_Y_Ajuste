@@ -78,7 +78,7 @@ export function OfertaComponent() {
           <table id="tabla-calendario">
             <thead>
               <tr>
-                <th>Codigo</th>
+                <th>Código</th>
                 <th id="centrar">Nombre</th>
                 <th>Créditos</th>
               </tr>

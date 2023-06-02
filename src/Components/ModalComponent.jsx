@@ -1,3 +1,7 @@
+/**Este componente es para mejorar la ventana que se abre para
+ * seleccionar el grupo, esto será para la proxima.
+ * [Está sin implementar, es decir NO se esta usando en ningun otro componente o pagina]
+ */
 import React from 'react';
 import styled from 'styled-components';
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PopupButton } from "./VentanaComponent"; 
+import { Ventana } from "./VentanaComponent"; 
 import { idUsuario } from '../Context/idUsuario';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -117,7 +117,7 @@ export function MatriculaComponent()
     return (
         <div className="container-cursos">
           { mostrarBoton ? 
-            <button onClick={cursosMatricula} id="boton-matricula">Iniciar Matricula</button> : null 
+            <button onClick={cursosMatricula} id="boton-matricula">Iniciar Matrícula</button> : null 
           }
           { mostrarContenido ?
             <div>
@@ -125,7 +125,7 @@ export function MatriculaComponent()
               <table>
                 <thead>
                   <tr>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th id="centrar">Nombre</th>
                     <th>Créditos</th>
                     <th>Correquisitos</th>
@@ -141,7 +141,7 @@ export function MatriculaComponent()
                       <td className="center centrar-en-tabla">{curso.Creditos}</td>
                       <td className="center">{curso.Correquisitos}</td>
                       <td className="center">
-                        <PopupButton codigoCurso={curso.Codigo} />
+                        <Ventana codigoCurso={curso.Codigo} />
                       </td>
                     </tr>
                   ))}

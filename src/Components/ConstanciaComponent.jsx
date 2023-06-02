@@ -68,7 +68,7 @@ export function ConstanciaComponent() {
     <div>
       <div className="info-card-constancia">
         <div className="titulo-usuario">Nombre: {estudiante && estudiante.Nombres+" "+estudiante.Apellidos}</div>
-        <div className="titulo-usuario">Credito Cursados: {estudiante && estudiante.CreditosCursados}</div>
+        <div className="titulo-usuario">Créditos Cursados: {estudiante && estudiante.CreditosCursados}</div>
       </div>
       <AnimatePresence>
         {isLoading ? (
