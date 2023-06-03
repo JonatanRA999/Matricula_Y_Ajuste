@@ -1,6 +1,8 @@
 
 #root {
+
   
+
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -15,6 +17,7 @@
 
 body {
   background: linear-gradient(135deg, #eef9f4, #c5f0d9);
+
   margin: 0;
   padding: 0;
 }
@@ -109,7 +112,9 @@ table {
   box-shadow: 2px 2px 5px #222; /* Sombra */
   background-color:white; /* Color de fondo */
   padding: 10px; /* Espacio interno */
+
   margin: 0 auto;
+
   color: #000000;
 }
 
@@ -173,6 +178,7 @@ table {
 }
 
 #app{
+
   width: 100%;
   height: 100%;
   margin: 0;

@@ -10,16 +10,21 @@ export function MatriculaComponent()
     const notify = () => toast("Wow so easy!");
 
     const {id} = idUsuario();
+
     const [mostrarBoton, setMostrarBoton] = useState(true);
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [tiempoRestante, setTiempoRestante] = useState(0);
     const [mostrarMensaje, setMostrarMensaje] = useState("");
+
+
     const [mostrarMensajeFinalizado, setMostrarMensajeFinalizado] = useState(false);
     const [listadoCursos, setListadoCursos] = useState([]);
 
 
     const cursosMatricula = async () => {
+
       const idEstudiante = id;
+
       const response = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/iniciarMatricula/${idEstudiante}`,
         {
@@ -53,6 +58,7 @@ export function MatriculaComponent()
     };
 
     const finalizarMatricula = async () => {
+
       const idEstudiante = id;
       try {
         const response = await fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/finalizarMatricula/${idEstudiante}`, {
@@ -74,6 +80,7 @@ export function MatriculaComponent()
       {
         toast.error('Ocurrió un error al finalizar la matrícula');
       }
+
     };
     
 
@@ -156,7 +163,9 @@ export function MatriculaComponent()
           }
 
           {mostrarMensajeFinalizado ? (
+
                 <ToastContainer position="top-center"/>
+
               ) : null}
           {mostrarMensajeFinalizado ? (
                 <ConstanciaComponent/>

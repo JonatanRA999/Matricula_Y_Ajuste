@@ -10,6 +10,7 @@ function Sidebar() {
       <Link to="/oferta" className='titulos'>Oferta</Link>
       <Link to="/matricula" className='titulos'>Matrícula</Link>
       <Link to="/constancia" className='titulos' >Constancia</Link>
+
       <Link to="/" className="additional-text" ><h1 >UdeA</h1></Link>
 
     </Nav>

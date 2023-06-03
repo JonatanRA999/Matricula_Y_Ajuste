@@ -3,6 +3,7 @@
 */
 
 import React, { useState } from "react";
+
 import { idUsuario } from '../Context/idUsuario';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +12,7 @@ export function Ventana({ codigoCurso })
  {
   
   const {id} = idUsuario();
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   const openPopup = () => {
@@ -20,7 +22,9 @@ export function Ventana({ codigoCurso })
     const top = window.innerHeight / 2 - height / 2;
 
     setTimeout(() => {
+
       fetch(`https://matriculaajustesapi-santiagobedoyao.b4a.run/horarios/${codigoCurso}`)
+
         .then((response) => response.json())
         .then((data) => {
           const popup = window.open(
@@ -41,7 +45,9 @@ export function Ventana({ codigoCurso })
             fetch("https://matriculaajustesapi-santiagobedoyao.b4a.run/registrarCurso", {
               method: "POST",
               body: JSON.stringify({
+
                 "idEstudiante": id,
+
                 //"codigoMatricula": "7411006157087",
                 "codigoHorario": selectedValue
               }),
@@ -51,6 +57,7 @@ export function Ventana({ codigoCurso })
             })
               .then((response) => response.json())
               .then((data) => {
+
                 console.log(data.message);
                 toast.success('✔ '+data.message, {
                   position: "top-right",
@@ -76,6 +83,7 @@ export function Ventana({ codigoCurso })
                   progress: undefined,
                   theme: "light",
                   });
+
               });
           });
 
@@ -110,6 +118,7 @@ export function Ventana({ codigoCurso })
       {selectedOption ? (
         <div>Horario: {selectedOption.Horario}</div>) :null
       }
+
     </div>
   );
 }
