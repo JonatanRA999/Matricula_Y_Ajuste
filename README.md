@@ -27,3 +27,4 @@ Moverse a la rama Develop y luego ejecutar los comandos  (1) y (2)
 para que todas las dependencias del proyecto se instalen y funcione 
 el proyecto correctamente, ya que es la rama en la que se está trabajando
 y actualizando constantemente.
+100% TERMINADO
