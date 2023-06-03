@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+
 import { motion, AnimatePresence } from "framer-motion";
 import "./Styles/StylesComponents.css";
 import { idUsuario } from "../Context/idUsuario";
@@ -8,7 +10,9 @@ export function OfertaComponent() {
   const { id } = idUsuario();
   const [listadoCursos, setListadoCursos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const [estudiante, setEstudiante] = useState(null);
+
 
 
   useEffect(() => {
@@ -22,7 +26,9 @@ export function OfertaComponent() {
     try {
       const cursos = await fetch(
         `https://matriculaajustesapi-santiagobedoyao.b4a.run/cursos/estudiante/${idEstudiante}`
+
         
+
       ).then((response) => response.json());
 
       setListadoCursos(cursos);
@@ -33,6 +39,7 @@ export function OfertaComponent() {
       setIsLoading(false);
     }
   };
+
 
   useEffect(() => {
     obtenerEstudiante();
@@ -64,6 +71,7 @@ export function OfertaComponent() {
         <div className="titulo-usuario">Semestre: {estudiante && estudiante.SemestreAcademico}</div>
         <div className="titulo-usuario">Tanda: {estudiante && estudiante.tandaMatricula}</div>
       </div>
+
       <AnimatePresence>
         {isLoading ? (
           <motion.div
@@ -78,7 +86,9 @@ export function OfertaComponent() {
           <table id="tabla-calendario">
             <thead>
               <tr>
+
                 <th>Código</th>
+
                 <th id="centrar">Nombre</th>
                 <th>Créditos</th>
               </tr>
@@ -93,9 +103,13 @@ export function OfertaComponent() {
               ))}
             </tbody>
           </table>
+
         ) : null}
+
       </AnimatePresence>
     </div>
   );
 }
+
+
 

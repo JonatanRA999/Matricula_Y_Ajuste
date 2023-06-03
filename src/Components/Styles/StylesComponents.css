@@ -11,6 +11,8 @@
 
 .custom-nav-vertical {
 
+
+
   border: 1px solid black;
   margin: 10px;
   padding: 35px;
@@ -33,6 +35,7 @@
     width: 100vw;
     height: 170px;
     margin: 0 auto;
+
   }
 
   .custom-button {
@@ -53,7 +56,9 @@
     margin-top: auto;
     background-color: rgba(124, 247, 99, 0.2);
     font-weight: bold;
+
     font-size: 25px;
+
   }
 
   .titulos{
@@ -63,7 +68,9 @@
 
     padding-top: 10px;
 
+
     text-align: left;
+
 
   }
 
@@ -74,10 +81,13 @@
   #tabla-calendario {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     border-collapse: collapse;
+
+
     width: 700px;
     height: 400px;
     font-weight: bold;
     font-size: 18px;
+
   }
   
   #tabla-calendario td, #tabla-calendario th {
@@ -111,6 +121,7 @@
 #tabla-calendario{
   height: 350px;
   
+
 }
 #elementos-nav-horizontal{
   width: 100%;
@@ -197,3 +208,4 @@
   color: #e9ecec;
   font-size: 19px;
 }
+

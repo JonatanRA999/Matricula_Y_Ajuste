@@ -8,6 +8,7 @@
 .contenedorInicioPage
 {
     
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +47,7 @@
 
 .iniciar-sesion-container{
   width: 100vw;
+
 }
 
 @keyframes waveAnimatio {
@@ -68,4 +70,5 @@
   height: 55px;
   animation: waveAnimatio 2s ease-in-out;
   animation-fill-mode: forwards; 
+
 }

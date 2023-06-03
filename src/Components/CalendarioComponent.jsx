@@ -1,14 +1,19 @@
+
+
 import React from 'react'
 import './Styles/StylesComponents.css';
 
 export function CalendarioComponent()
 {
   return (
+
     <div id='container-calendario'>
+
        <table id= "tabla-calendario" >
         <tr>
           <th>Actividad</th>
           <th>Fecha</th>
+
           <th>Semestre Académico</th>
         </tr>
         <tr>
@@ -50,6 +55,7 @@ export function CalendarioComponent()
           <td>Terminación Oficial</td>
           <td>15/12/2023</td>
           <td className='centrar-en-tabla'>2023/2</td>
+
         </tr>
       </table>
     </div>
