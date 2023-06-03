@@ -49,7 +49,9 @@ function App()
     <div id='app'>
 
 
+
     <IdUser.Provider value={{id, setId}}>
+
 
     <Router>
       <Routes>
@@ -68,16 +70,20 @@ function App()
         <Route path='/oferta' element={<PrivadoLayout />}>
           <Route index element={<Oferta />} />
         </Route>
+
         <Route path='/constancia' element={<PrivadoLayout />}>
           <Route index element={<Constancia />} />
         </Route>
+
         <Route path='/inicio' element={<PrivadoLayout />}>
           <Route index element={<InicioMatricula />} />
         </Route>
       </Routes>
     </Router>
+
     </IdUser.Provider>
     
+
   </div>
 
   )
