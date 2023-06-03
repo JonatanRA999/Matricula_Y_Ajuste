@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './Styles/App.css';
+import './Styles/Style.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState, useEffect } from 'react';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { Ingresar } from './Pages/IngresarPage';
+import {Inicio} from './Pages/InicioPage';
+import {Calendario} from './Pages/CalendarioPage';
+import {Matricula} from './Pages/MatriculaPage';
+import {Oferta} from './Pages/OfertaPage';
+import {PublicoLayout} from './Layouts/PublicoLayout';
+import {PrivadoLayout} from './Layouts/PrivadoLayout';
+import {LoginLayout} from './Layouts/LoginLayout';
+
+import {InicioMatricula } from './Pages/InicioMatriculaPage';
+import { IdUser } from './Context/idUsuario';
+import { Constancia } from './Pages/ConstanciaPage';
+
+
+
+function App() 
+{
+  const [id ,setId] = useState("");
+
+  useEffect(()=>{
+    console.log("Tu ide es ", id);
+  },[id])
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <div id='app'>
+
+
+    <IdUser.Provider value={{id, setId}}>
+
+    <Router>
+      <Routes>
+        <Route path='/' element={<PublicoLayout />}>
+          <Route index element={<Inicio />} />
+        </Route>
+        <Route path='/ingresar' element={<LoginLayout />}>
+          <Route index element={<Ingresar />} />
+        </Route>
+        <Route path='/calendario' element={<PrivadoLayout />}>
+          <Route index element={<Calendario />} />
+        </Route>
+        <Route path='/matricula' element={<PrivadoLayout />}>
+          <Route index element={<Matricula />} />
+        </Route>
+        <Route path='/oferta' element={<PrivadoLayout />}>
+          <Route index element={<Oferta />} />
+        </Route>
+        <Route path='/constancia' element={<PrivadoLayout />}>
+          <Route index element={<Constancia />} />
+        </Route>
+        <Route path='/inicio' element={<PrivadoLayout />}>
+          <Route index element={<InicioMatricula />} />
+        </Route>
+      </Routes>
+    </Router>
+    </IdUser.Provider>
+    
+  </div>
+
   )
 }
 
-export default App
+export default App;
+
+
