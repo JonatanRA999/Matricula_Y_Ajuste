@@ -1,0 +1,180 @@
+
+#root {
+  
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: #000000;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  padding: 0;
+  
+}
+
+body {
+  background: linear-gradient(135deg, #eef9f4, #c5f0d9);
+  margin: 0;
+  padding: 0;
+}
+
+/*----ESTILOS DE LA TABLA QUE MUESTRA LOS CURSOS */
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+th {
+  background-color: #298340;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid rgb(240, 233, 233);
+  color: rgb(254, 255, 254);
+  
+}
+
+td{
+  color :black;
+}
+
+#tiempo{
+  background-color: #298340;
+  border-radius: 80px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+}
+
+td button{
+  background-color: yellow;
+  color:#000000;
+}
+/*-----------------------------FIN ESTILOS TABLA-------------------------------*/
+
+.container-cursos {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 300px; overflow: auto;
+
+  
+}
+
+table {
+  flex-grow: 1;
+  height: 100%;
+}
+
+
+/* Estilos de la caja contenedora */
+.container-cursos {
+  height: 510px; width: 750px;/* Altura de la caja */
+  border: 1px solid #444; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+  overflow: auto; /* Scrollbar sólo cuando sea necesario */
+  box-shadow: 2px 2px 5px #222; /* Sombra */
+  background-color:white; /* Color de fondo */
+  padding: 10px; /* Espacio interno */
+  margin: 0 auto;
+  color: #000000;
+}
+
+
+/* Estilos de la scrollbar */
+.container-cursos::-webkit-scrollbar {
+  width: 8px; /* Ancho */
+  height: 8px;
+}
+
+.container-cursos::-webkit-scrollbar-thumb {
+  background-color: #666; /* Color del thumb */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.container-cursos::-webkit-scrollbar-track {
+  background-color: #333; /* Color del track */
+}
+
+
+#titulo-matricula{
+  color: #000000;
+  font-size: 35px;
+}
+
+#boton-matricula{
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
+}
+
+#mensaje-matricula{
+  
+  margin: 0 auto;
+  background-color: #298340;
+  color: white;
+}
+
+#centrar{
+  text-align: center;
+}
+
+#boton-Enviar-matricula{
+  background-color: #298340;
+  color: white;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#mensaje-final{
+
+  background-color: #298340;
+  color: white;
+  font-size: 18px;
+  max-width: 500px;
+  width: 50%;
+  margin: 0 auto; /* centrar horizontalmente */
+  border: none;
+  cursor: default;
+
+}
+
+#app{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
